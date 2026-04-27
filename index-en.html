@@ -1,0 +1,3112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>MDIVO Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/mdivo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/mdivo","name":"MDIVO Ontology", "headline":"Document describing the ontology https://w3id.org/mdivo", "dateReleased":"Mon Apr 27 22:17:15 CEST 2026", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Nil Arilla"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>MDIVO Ontology</h1>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/mdivo/1.0">https://w3id.org/mdivo/1.0</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/mdivo">https://w3id.org/mdivo</a></dd>
+<dt>Authors:</dt>
+<dd>Nil Arilla</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Nil Arilla. MDIVO Ontology. Retrieved from: https://w3id.org/mdivo/1.0</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;https://w3id.org/mdivo&gt;</td></tr>
+<tr><td><b>dbr</b></td><td>&lt;http://dbpedia.org/resource/&gt;</td></tr>
+<tr><td><b>dcterms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
+<tr><td><b>mdivo</b></td><td>&lt;https://w3id.org/mdivo#&gt;</td></tr>
+<tr><td><b>ns2</b></td><td>&lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>swrl</b></td><td>&lt;http://www.w3.org/2003/11/swrl#&gt;</td></tr>
+<tr><td><b>swrlb</b></td><td>&lt;http://www.w3.org/2003/11/swrlb#&gt;</td></tr>
+<tr><td><b>wd</b></td><td>&lt;http://www.wikidata.org/entity/&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Medical Devices and In-Vitro Diagnostics Ontology (MDIVO): Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#ActiveDevice" title="https://w3id.org/mdivo#ActiveDevice">Active Device</a>
+   </li>
+   <li>
+      <a href="#ClassA" title="https://w3id.org/mdivo#ClassA">Class A</a>
+   </li>
+   <li>
+      <a href="#ClassB" title="https://w3id.org/mdivo#ClassB">Class B</a>
+   </li>
+   <li>
+      <a href="#ClassC" title="https://w3id.org/mdivo#ClassC">Class C</a>
+   </li>
+   <li>
+      <a href="#ClassD" title="https://w3id.org/mdivo#ClassD">Class D</a>
+   </li>
+   <li>
+      <a href="#ClassI" title="https://w3id.org/mdivo#ClassI">Class I</a>
+   </li>
+   <li>
+      <a href="#ClassIIa" title="https://w3id.org/mdivo#ClassIIa">Class IIa</a>
+   </li>
+   <li>
+      <a href="#ClassIIb" title="https://w3id.org/mdivo#ClassIIb">Class IIb</a>
+   </li>
+   <li>
+      <a href="#ClassIII" title="https://w3id.org/mdivo#ClassIII">Class III</a>
+   </li>
+   <li>
+      <a href="#CompetentAuthority" title="https://w3id.org/mdivo#CompetentAuthority">Competent Authority</a>
+   </li>
+   <li>
+      <a href="#Country" title="https://w3id.org/mdivo#Country">Country</a>
+   </li>
+   <li>
+      <a href="#CybersecurityRisk" title="https://w3id.org/mdivo#CybersecurityRisk">Cybersecurity Risk</a>
+   </li>
+   <li>
+      <a href="#DiagnosticRisk" title="https://w3id.org/mdivo#DiagnosticRisk">Diagnostic Risk</a>
+   </li>
+   <li>
+      <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a>
+   </li>
+   <li>
+      <a href="#ImplantableActiveDevice" title="https://w3id.org/mdivo#ImplantableActiveDevice">Implantable Active Device</a>
+   </li>
+   <li>
+      <a href="#ImplantableDevice" title="https://w3id.org/mdivo#ImplantableDevice">Implantable Device</a>
+   </li>
+   <li>
+      <a href="#InSituCorrection" title="https://w3id.org/mdivo#InSituCorrection">In Situ Correction</a>
+   </li>
+   <li>
+      <a href="#InVitroDiagnosticDevice" title="https://w3id.org/mdivo#InVitroDiagnosticDevice">In-Vitro Diagnostic Device</a>
+   </li>
+   <li>
+      <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a>
+   </li>
+   <li>
+      <a href="#InfectionRisk" title="https://w3id.org/mdivo#InfectionRisk">Infection Risk</a>
+   </li>
+   <li>
+      <a href="#InjuryRisk" title="https://w3id.org/mdivo#InjuryRisk">Injury Risk</a>
+   </li>
+   <li>
+      <a href="#IVDR" title="https://w3id.org/mdivo#IVDR">IVDR Framework</a>
+   </li>
+   <li>
+      <a href="#MalfunctionRisk" title="https://w3id.org/mdivo#MalfunctionRisk">Malfunction Risk</a>
+   </li>
+   <li>
+      <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a>
+   </li>
+   <li>
+      <a href="#MDR" title="https://w3id.org/mdivo#MDR">MDR Framework</a>
+   </li>
+   <li>
+      <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a>
+   </li>
+   <li>
+      <a href="#NearMissIncident" title="https://w3id.org/mdivo#NearMissIncident">Near Miss Incident</a>
+   </li>
+   <li>
+      <a href="#Recall" title="https://w3id.org/mdivo#Recall">Recall</a>
+   </li>
+   <li>
+      <a href="#RegulatoryFramework" title="https://w3id.org/mdivo#RegulatoryFramework">Regulatory Framework</a>
+   </li>
+   <li>
+      <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a>
+   </li>
+   <li>
+      <a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a>
+   </li>
+   <li>
+      <a href="#SafetyAlert" title="https://w3id.org/mdivo#SafetyAlert">Safety Alert</a>
+   </li>
+   <li>
+      <a href="#SelfTestDevice" title="https://w3id.org/mdivo#SelfTestDevice">Self Test Device</a>
+   </li>
+   <li>
+      <a href="#SeriousIncident" title="https://w3id.org/mdivo#SeriousIncident">Serious Incident</a>
+   </li>
+   <li>
+      <a href="#SingleUseDevice" title="https://w3id.org/mdivo#SingleUseDevice">Single Use Device</a>
+   </li>
+   <li>
+      <a href="#SoftwareRisk" title="https://w3id.org/mdivo#SoftwareRisk">Software Risk</a>
+   </li>
+   <li>
+      <a href="#UserNotice" title="https://w3id.org/mdivo#UserNotice">User Notice</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#affectsDevice" title="https://w3id.org/mdivo#affectsDevice">affects device</a>
+   </li>
+   <li>
+      <a href="#hasEstablishmentCountry" title="https://w3id.org/mdivo#hasEstablishmentCountry">has establishment country</a>
+   </li>
+   <li>
+      <a href="#hasFSCA" title="https://w3id.org/mdivo#hasFSCA">has FSCA</a>
+   </li>
+   <li>
+      <a href="#hasIncident" title="https://w3id.org/mdivo#hasIncident">has incident</a>
+   </li>
+   <li>
+      <a href="#hasReportingCountry" title="https://w3id.org/mdivo#hasReportingCountry">has reporting country</a>
+   </li>
+   <li>
+      <a href="#hasReportingEntity" title="https://w3id.org/mdivo#hasReportingEntity">has reporting entity</a>
+   </li>
+   <li>
+      <a href="#hasRiskClass" title="https://w3id.org/mdivo#hasRiskClass">has risk class</a>
+   </li>
+   <li>
+      <a href="#isManufacturedBy" title="https://w3id.org/mdivo#isManufacturedBy">is manufactured by</a>
+   </li>
+   <li>
+      <a href="#isSupervisedBy" title="https://w3id.org/mdivo#isSupervisedBy">is supervised by</a>
+   </li>
+   <li>
+      <a href="#fallsUnder" title="https://w3id.org/mdivo#fallsUnder">Links a medical device to its applicable regulatory framework</a>
+   </li>
+   <li>
+      <a href="#manufactures" title="https://w3id.org/mdivo#manufactures">manufactures</a>
+   </li>
+   <li>
+      <a href="#realizesRisk" title="https://w3id.org/mdivo#realizesRisk">realizes risk</a>
+   </li>
+   <li>
+      <a href="#respondsToIncident" title="https://w3id.org/mdivo#respondsToIncident">responds to incident</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#hasActionDate" title="https://w3id.org/mdivo#hasActionDate">has action date</a>
+   </li>
+   <li>
+      <a href="#hasAuthorizationNumber" title="https://w3id.org/mdivo#hasAuthorizationNumber">has authorization number</a>
+   </li>
+   <li>
+      <a href="#hasClosureDate" title="https://w3id.org/mdivo#hasClosureDate">has closure date</a>
+   </li>
+   <li>
+      <a href="#hasContactEmail" title="https://w3id.org/mdivo#hasContactEmail">has contact email</a>
+   </li>
+   <li>
+      <a href="#hasDeviceName" title="https://w3id.org/mdivo#hasDeviceName">has device name</a>
+   </li>
+   <li>
+      <a href="#hasDevicesAffectedCount" title="https://w3id.org/mdivo#hasDevicesAffectedCount">has devices affected count</a>
+   </li>
+   <li>
+      <a href="#hasEudamedFSCARef" title="https://w3id.org/mdivo#hasEudamedFSCARef">has EUDAMED FSCA reference</a>
+   </li>
+   <li>
+      <a href="#hasEudamedIncidentRef" title="https://w3id.org/mdivo#hasEudamedIncidentRef">has EUDAMED incident reference</a>
+   </li>
+   <li>
+      <a href="#hasEventDate" title="https://w3id.org/mdivo#hasEventDate">has event date</a>
+   </li>
+   <li>
+      <a href="#hasIMDRFCode" title="https://w3id.org/mdivo#hasIMDRFCode">has IMDRF Code</a>
+   </li>
+   <li>
+      <a href="#hasIntendedPurpose" title="https://w3id.org/mdivo#hasIntendedPurpose">has intended purpose</a>
+   </li>
+   <li>
+      <a href="#hasOrgName" title="https://w3id.org/mdivo#hasOrgName">has organization name</a>
+   </li>
+   <li>
+      <a href="#hasOutcome" title="https://w3id.org/mdivo#hasOutcome">has outcome</a>
+   </li>
+   <li>
+      <a href="#hasPatientAge" title="https://w3id.org/mdivo#hasPatientAge">has patient age</a>
+   </li>
+   <li>
+      <a href="#hasProbability" title="https://w3id.org/mdivo#hasProbability">has probability</a>
+   </li>
+   <li>
+      <a href="#hasReportDate" title="https://w3id.org/mdivo#hasReportDate">has report date</a>
+   </li>
+   <li>
+      <a href="#hasSeverity" title="https://w3id.org/mdivo#hasSeverity">has severity</a>
+   </li>
+   <li>
+      <a href="#hasSRN" title="https://w3id.org/mdivo#hasSRN">has SRN</a>
+   </li>
+   <li>
+      <a href="#hasStatus" title="https://w3id.org/mdivo#hasStatus">has status</a>
+   </li>
+   <li>
+      <a href="#hasUDI" title="https://w3id.org/mdivo#hasUDI">has UDI</a>
+   </li>
+   <li>
+      <a href="#isActive" title="https://w3id.org/mdivo#isActive">is active</a>
+   </li>
+   <li>
+      <a href="#isImplantable" title="https://w3id.org/mdivo#isImplantable">is implantable</a>
+   </li>
+   <li>
+      <a href="#isIVD" title="https://w3id.org/mdivo#isIVD">is IVD</a>
+   </li>
+   <li>
+      <a href="#isReusable" title="https://w3id.org/mdivo#isReusable">is reusable</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"
+         title="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled">
+         <span>is Rule Enabled</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Authority_BfArM" title="https://w3id.org/mdivo#Authority_BfArM">BfArM</a>
+   </li>
+   <li>
+      <a href="#_ClassC_inst" title="https://w3id.org/mdivo#_ClassC_inst">Class C (instance)</a>
+   </li>
+   <li>
+      <a href="#_ClassIII_inst" title="https://w3id.org/mdivo#_ClassIII_inst">Class III (instance)</a>
+   </li>
+   <li>
+      <a href="#DEV-017" title="https://w3id.org/mdivo#DEV-017">cobas SARS-CoV-2 RT-PCR Test</a>
+   </li>
+   <li>
+      <a href="#RSK-008" title="https://w3id.org/mdivo#RSK-008">False negative result in PCR test</a>
+   </li>
+   <li>
+      <a href="#INC-012" title="https://w3id.org/mdivo#INC-012">False negatives in cobas SARS-CoV-2 test for Omicron BA.2.86</a>
+   </li>
+   <li>
+      <a href="#http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices"
+         title="http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices">
+         <span>Federal Institute for Drugs and Medical Devices</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://dbpedia.org/resource/Germany" title="http://dbpedia.org/resource/Germany">
+         <span>Germany</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Country_Germany" title="https://w3id.org/mdivo#Country_Germany">Germany</a>
+   </li>
+   <li>
+      <a href="#http://dbpedia.org/resource/Health_Products_Regulatory_Authority"
+         title="http://dbpedia.org/resource/Health_Products_Regulatory_Authority">
+         <span>Health Products Regulatory Authority</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DEV-001" title="https://w3id.org/mdivo#DEV-001">HeartMate 3 LVAD</a>
+   </li>
+   <li>
+      <a href="#Authority_HPRA" title="https://w3id.org/mdivo#Authority_HPRA">HPRA</a>
+   </li>
+   <li>
+      <a href="#http://dbpedia.org/resource/Ireland" title="http://dbpedia.org/resource/Ireland">
+         <span>Ireland</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Country_Ireland" title="https://w3id.org/mdivo#Country_Ireland">Ireland</a>
+   </li>
+   <li>
+      <a href="#_IVDR_inst" title="https://w3id.org/mdivo#_IVDR_inst">IVDR (instance)</a>
+   </li>
+   <li>
+      <a href="#_MDR_inst" title="https://w3id.org/mdivo#_MDR_inst">MDR (instance)</a>
+   </li>
+   <li>
+      <a href="#http://dbpedia.org/resource/Medtronic" title="http://dbpedia.org/resource/Medtronic">
+         <span>Medtronic</span>
+      </a>
+   </li>
+   <li>
+      <a href="#MAN-001" title="https://w3id.org/mdivo#MAN-001">Medtronic plc</a>
+   </li>
+   <li>
+      <a href="#INC-001" title="https://w3id.org/mdivo#INC-001">Outflow-graft obstruction in HeartMate 3 unit</a>
+   </li>
+   <li>
+      <a href="#http://www.wikidata.org/entity/Q183" title="http://www.wikidata.org/entity/Q183">
+         <span>Q183</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.wikidata.org/entity/Q27" title="http://www.wikidata.org/entity/Q27">
+         <span>Q27</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.wikidata.org/entity/Q573153" title="http://www.wikidata.org/entity/Q573153">
+         <span>Q573153</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.wikidata.org/entity/Q679041" title="http://www.wikidata.org/entity/Q679041">
+         <span>Q679041</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://dbpedia.org/resource/Roche_Diagnostics" title="http://dbpedia.org/resource/Roche_Diagnostics">
+         <span>Roche Diagnostics</span>
+      </a>
+   </li>
+   <li>
+      <a href="#MAN-005" title="https://w3id.org/mdivo#MAN-005">Roche Diagnostics GmbH</a>
+   </li>
+   <li>
+      <a href="#FSCA-001" title="https://w3id.org/mdivo#FSCA-001">Safety alert for HeartMate 3 outflow graft (FSCA-001)</a>
+   </li>
+   <li>
+      <a href="#RSK-003" title="https://w3id.org/mdivo#RSK-003">Thrombotic event from LVAD outflow graft</a>
+   </li>
+   <li>
+      <a href="#FSCA-012" title="https://w3id.org/mdivo#FSCA-012">User notice for cobas SARS-CoV-2 (FSCA-012)</a>
+   </li>
+</ul><h4> SWRL Rules </h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#d4e1972">Rule_ImplantableActive</a>
+   </li>
+   <li>
+      <a href="#d4e1888">Rule_IVDFallsUnderIVDR</a>
+   </li>
+   <li>
+      <a href="#d4e2077">Rule_ManufacturerIsReportingEntity</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Medical Devices and In-Vitro Diagnostics Ontology (MDIVO): Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">Ontology for the European catalogue of high risk medical devices and in-vitro diagnostic devices, aligned with EU Regulations MDR (2017/745) and IVDR (2017/746) and the EUDAMED database.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Medical Devices and In-Vitro Diagnostics Ontology (MDIVO) classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Medical Devices and In-Vitro Diagnostics Ontology (MDIVO).
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#ActiveDevice" title="https://w3id.org/mdivo#ActiveDevice">Active Device</a></li>
+  <li><a href="#ClassA" title="https://w3id.org/mdivo#ClassA">Class A</a></li>
+  <li><a href="#ClassB" title="https://w3id.org/mdivo#ClassB">Class B</a></li>
+  <li><a href="#ClassC" title="https://w3id.org/mdivo#ClassC">Class C</a></li>
+  <li><a href="#ClassD" title="https://w3id.org/mdivo#ClassD">Class D</a></li>
+  <li><a href="#ClassI" title="https://w3id.org/mdivo#ClassI">Class I</a></li>
+  <li><a href="#ClassIIa" title="https://w3id.org/mdivo#ClassIIa">Class IIa</a></li>
+  <li><a href="#ClassIIb" title="https://w3id.org/mdivo#ClassIIb">Class IIb</a></li>
+  <li><a href="#ClassIII" title="https://w3id.org/mdivo#ClassIII">Class III</a></li>
+  <li><a href="#CompetentAuthority" title="https://w3id.org/mdivo#CompetentAuthority">Competent Authority</a></li>
+  <li><a href="#Country" title="https://w3id.org/mdivo#Country">Country</a></li>
+  <li><a href="#CybersecurityRisk" title="https://w3id.org/mdivo#CybersecurityRisk">Cybersecurity Risk</a></li>
+  <li><a href="#DiagnosticRisk" title="https://w3id.org/mdivo#DiagnosticRisk">Diagnostic Risk</a></li>
+  <li><a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a></li>
+  <li><a href="#ImplantableActiveDevice" title="https://w3id.org/mdivo#ImplantableActiveDevice">Implantable Active Device</a></li>
+  <li><a href="#ImplantableDevice" title="https://w3id.org/mdivo#ImplantableDevice">Implantable Device</a></li>
+  <li><a href="#InSituCorrection" title="https://w3id.org/mdivo#InSituCorrection">In Situ Correction</a></li>
+  <li><a href="#InVitroDiagnosticDevice" title="https://w3id.org/mdivo#InVitroDiagnosticDevice">In-Vitro Diagnostic Device</a></li>
+  <li><a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a></li>
+  <li><a href="#InfectionRisk" title="https://w3id.org/mdivo#InfectionRisk">Infection Risk</a></li>
+  <li><a href="#InjuryRisk" title="https://w3id.org/mdivo#InjuryRisk">Injury Risk</a></li>
+  <li><a href="#IVDR" title="https://w3id.org/mdivo#IVDR">IVDR Framework</a></li>
+  <li><a href="#MalfunctionRisk" title="https://w3id.org/mdivo#MalfunctionRisk">Malfunction Risk</a></li>
+  <li><a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a></li>
+  <li><a href="#MDR" title="https://w3id.org/mdivo#MDR">MDR Framework</a></li>
+  <li><a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a></li>
+  <li><a href="#NearMissIncident" title="https://w3id.org/mdivo#NearMissIncident">Near Miss Incident</a></li>
+  <li><a href="#Recall" title="https://w3id.org/mdivo#Recall">Recall</a></li>
+  <li><a href="#RegulatoryFramework" title="https://w3id.org/mdivo#RegulatoryFramework">Regulatory Framework</a></li>
+  <li><a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a></li>
+  <li><a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a></li>
+  <li><a href="#SafetyAlert" title="https://w3id.org/mdivo#SafetyAlert">Safety Alert</a></li>
+  <li><a href="#SelfTestDevice" title="https://w3id.org/mdivo#SelfTestDevice">Self Test Device</a></li>
+  <li><a href="#SeriousIncident" title="https://w3id.org/mdivo#SeriousIncident">Serious Incident</a></li>
+  <li><a href="#SingleUseDevice" title="https://w3id.org/mdivo#SingleUseDevice">Single Use Device</a></li>
+  <li><a href="#SoftwareRisk" title="https://w3id.org/mdivo#SoftwareRisk">Software Risk</a></li>
+  <li><a href="#UserNotice" title="https://w3id.org/mdivo#UserNotice">User Notice</a></li>
+ </ul>
+ <div class="entity" id="ActiveDevice">
+  <h3>Active Device<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ActiveDevice</p>
+  <div class="comment">
+   <span class="markdown">A medical device whose operation depends on a source of energy other than that generated by the human body or gravity</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ClassA">
+  <h3>Class A<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ClassA</p>
+  <div class="comment">
+   <span class="markdown">Lowest IVDR risk class</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ClassB">
+  <h3>Class B<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ClassB</p>
+  <div class="comment">
+   <span class="markdown">Low medium IVDR risk class</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ClassC">
+  <h3>Class C<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ClassC</p>
+  <div class="comment">
+   <span class="markdown">Medium high IVDR risk class</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#_ClassC_inst" title="https://w3id.org/mdivo#_ClassC_inst">Class C (instance)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ClassD">
+  <h3>Class D<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ClassD</p>
+  <div class="comment">
+   <span class="markdown">Highest IVDR risk class</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ClassI">
+  <h3>Class I<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ClassI</p>
+  <div class="comment">
+   <span class="markdown">Lowest MDR risk class</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ClassIIa">
+  <h3>Class IIa<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ClassIIa</p>
+  <div class="comment">
+   <span class="markdown">Medium low MDR risk class</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ClassIIb">
+  <h3>Class IIb<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ClassIIb</p>
+  <div class="comment">
+   <span class="markdown">Medium high MDR risk class</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ClassIII">
+  <h3>Class III<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ClassIII</p>
+  <div class="comment">
+   <span class="markdown">Highest MDR risk class</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#_ClassIII_inst" title="https://w3id.org/mdivo#_ClassIII_inst">Class III (instance)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CompetentAuthority">
+  <h3>Competent Authority<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#CompetentAuthority</p>
+  <div class="comment">
+   <span class="markdown">National authority responsible for supervising medical device manufacturers and the post market surveillance system within an EU member state.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isSupervisedBy" title="https://w3id.org/mdivo#isSupervisedBy">is supervised by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Authority_BfArM" title="https://w3id.org/mdivo#Authority_BfArM">BfArM</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Authority_HPRA" title="https://w3id.org/mdivo#Authority_HPRA">HPRA</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Country">
+  <h3>Country<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#Country</p>
+  <div class="comment">
+   <span class="markdown">A sovereign state, used to model the country of establishment of a manufacturer and the country in which an incident is reported.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasEstablishmentCountry" title="https://w3id.org/mdivo#hasEstablishmentCountry">has establishment country</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasReportingCountry" title="https://w3id.org/mdivo#hasReportingCountry">has reporting country</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Country_Germany" title="https://w3id.org/mdivo#Country_Germany">Germany</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Country_Ireland" title="https://w3id.org/mdivo#Country_Ireland">Ireland</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CybersecurityRisk">
+  <h3>Cybersecurity Risk<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#CybersecurityRisk</p>
+  <div class="comment">
+   <span class="markdown">Risk arising from inadequate protection against unauthorized access or modification of a device or its data</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DiagnosticRisk">
+  <h3>Diagnostic Risk<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#DiagnosticRisk</p>
+  <div class="comment">
+   <span class="markdown">Risk of erroneous diagnostic results, including false positives or false negatives</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#RSK-008" title="https://w3id.org/mdivo#RSK-008">False negative result in PCR test</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FSCA">
+  <h3>Field Safety Corrective Action<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#FSCA</p>
+  <div class="comment">
+   <span class="markdown">Action taken by a manufacturer to reduce the risk of death or serious deterioration in health associated with the use of a device</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#InSituCorrection" title="https://w3id.org/mdivo#InSituCorrection">In Situ Correction</a> <sup class="type-c" title="class">c</sup>, <a href="#Recall" title="https://w3id.org/mdivo#Recall">Recall</a> <sup class="type-c" title="class">c</sup>, <a href="#SafetyAlert" title="https://w3id.org/mdivo#SafetyAlert">Safety Alert</a> <sup class="type-c" title="class">c</sup>, <a href="#UserNotice" title="https://w3id.org/mdivo#UserNotice">User Notice</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasEudamedFSCARef" title="https://w3id.org/mdivo#hasEudamedFSCARef">has EUDAMED FSCA reference</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasActionDate" title="https://w3id.org/mdivo#hasActionDate">has action date</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasClosureDate" title="https://w3id.org/mdivo#hasClosureDate">has closure date</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasDevicesAffectedCount" title="https://w3id.org/mdivo#hasDevicesAffectedCount">has devices affected count</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasStatus" title="https://w3id.org/mdivo#hasStatus">has status</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#respondsToIncident" title="https://w3id.org/mdivo#respondsToIncident">responds to incident</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasFSCA" title="https://w3id.org/mdivo#hasFSCA">has FSCA</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ImplantableActiveDevice">
+  <h3>Implantable Active Device<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ImplantableActiveDevice</p>
+  <div class="comment">
+   <span class="markdown">Active device intended for implantation</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup> <span class="logic">and</span> (<a href="#isActive" title="https://w3id.org/mdivo#isActive">is active</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">value</span> true) <span class="logic">and</span> (<a href="#isImplantable" title="https://w3id.org/mdivo#isImplantable">is implantable</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">value</span> true)
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#DEV-001" title="https://w3id.org/mdivo#DEV-001">HeartMate 3 LVAD</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ImplantableDevice">
+  <h3>Implantable Device<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#ImplantableDevice</p>
+  <div class="comment">
+   <span class="markdown">A device intended to be totally or partially introduced into the human body and to remain there for at least 30 days</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="InSituCorrection">
+  <h3>In Situ Correction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#InSituCorrection</p>
+  <div class="comment">
+   <span class="markdown">FSCA performed at the location where the device is installed</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#UserNotice" title="https://w3id.org/mdivo#UserNotice">User Notice</a> <sup class="type-c" title="class">c</sup>, <a href="#Recall" title="https://w3id.org/mdivo#Recall">Recall</a> <sup class="type-c" title="class">c</sup>, <a href="#SafetyAlert" title="https://w3id.org/mdivo#SafetyAlert">Safety Alert</a> <sup class="type-c" title="class">c</sup>, <a href="#UserNotice" title="https://w3id.org/mdivo#UserNotice">User Notice</a> <sup class="type-c" title="class">c</sup>, <a href="#Recall" title="https://w3id.org/mdivo#Recall">Recall</a> <sup class="type-c" title="class">c</sup>, <a href="#UserNotice" title="https://w3id.org/mdivo#UserNotice">User Notice</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="InVitroDiagnosticDevice">
+  <h3>In-Vitro Diagnostic Device<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#InVitroDiagnosticDevice</p>
+  <div class="comment">
+   <span class="markdown">Reagent, calibrator, instrument or system intended for in-vitro examination of specimens from the human body</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#SelfTestDevice" title="https://w3id.org/mdivo#SelfTestDevice">Self Test Device</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#DEV-017" title="https://w3id.org/mdivo#DEV-017">cobas SARS-CoV-2 RT-PCR Test</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Incident">
+  <h3>Incident<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#Incident</p>
+  <div class="comment">
+   <span class="markdown">Any malfunction or deterioration in the characteristics or performance of a device that has led, might have led or might lead to harm to a patient or user</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#NearMissIncident" title="https://w3id.org/mdivo#NearMissIncident">Near Miss Incident</a> <sup class="type-c" title="class">c</sup>, <a href="#SeriousIncident" title="https://w3id.org/mdivo#SeriousIncident">Serious Incident</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#affectsDevice" title="https://w3id.org/mdivo#affectsDevice">affects device</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasEudamedIncidentRef" title="https://w3id.org/mdivo#hasEudamedIncidentRef">has EUDAMED incident reference</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFSCA" title="https://w3id.org/mdivo#hasFSCA">has FSCA</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasEventDate" title="https://w3id.org/mdivo#hasEventDate">has event date</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasOutcome" title="https://w3id.org/mdivo#hasOutcome">has outcome</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPatientAge" title="https://w3id.org/mdivo#hasPatientAge">has patient age</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasReportDate" title="https://w3id.org/mdivo#hasReportDate">has report date</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasReportingCountry" title="https://w3id.org/mdivo#hasReportingCountry">has reporting country</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasReportingEntity" title="https://w3id.org/mdivo#hasReportingEntity">has reporting entity</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizesRisk" title="https://w3id.org/mdivo#realizesRisk">realizes risk</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasIncident" title="https://w3id.org/mdivo#hasIncident">has incident</a> <sup class="type-op" title="object property">op</sup>, <a href="#respondsToIncident" title="https://w3id.org/mdivo#respondsToIncident">responds to incident</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="InfectionRisk">
+  <h3>Infection Risk<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#InfectionRisk</p>
+  <div class="comment">
+   <span class="markdown">Risk of infection associated with device use</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="InjuryRisk">
+  <h3>Injury Risk<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#InjuryRisk</p>
+  <div class="comment">
+   <span class="markdown">Risk of physical harm to the patient or user resulting from device use</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#RSK-003" title="https://w3id.org/mdivo#RSK-003">Thrombotic event from LVAD outflow graft</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="IVDR">
+  <h3>IVDR Framework<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#IVDR</p>
+  <div class="comment">
+   <span class="markdown">Regulation (EU) 2017/746 on in-vitro diagnostic medical devices</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#RegulatoryFramework" title="https://w3id.org/mdivo#RegulatoryFramework">Regulatory Framework</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#_IVDR_inst" title="https://w3id.org/mdivo#_IVDR_inst">IVDR (instance)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#MDR" title="https://w3id.org/mdivo#MDR">MDR Framework</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MalfunctionRisk">
+  <h3>Malfunction Risk<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#MalfunctionRisk</p>
+  <div class="comment">
+   <span class="markdown">Risk of failure of the device to perform as intended</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Manufacturer">
+  <h3>Manufacturer<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#Manufacturer</p>
+  <div class="comment">
+   <span class="markdown">Legal or natural person who manufactures or refurbishes a medical device and markets it under its own name.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasSRN" title="https://w3id.org/mdivo#hasSRN">has SRN</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAuthorizationNumber" title="https://w3id.org/mdivo#hasAuthorizationNumber">has authorization number</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasContactEmail" title="https://w3id.org/mdivo#hasContactEmail">has contact email</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasEstablishmentCountry" title="https://w3id.org/mdivo#hasEstablishmentCountry">has establishment country</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasOrgName" title="https://w3id.org/mdivo#hasOrgName">has organization name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isSupervisedBy" title="https://w3id.org/mdivo#isSupervisedBy">is supervised by</a> <sup class="type-op" title="object property">op</sup>, <a href="#manufactures" title="https://w3id.org/mdivo#manufactures">manufactures</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasReportingEntity" title="https://w3id.org/mdivo#hasReportingEntity">has reporting entity</a> <sup class="type-op" title="object property">op</sup>, <a href="#isManufacturedBy" title="https://w3id.org/mdivo#isManufacturedBy">is manufactured by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#MAN-001" title="https://w3id.org/mdivo#MAN-001">Medtronic plc</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#MAN-005" title="https://w3id.org/mdivo#MAN-005">Roche Diagnostics GmbH</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MDR">
+  <h3>MDR Framework<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#MDR</p>
+  <div class="comment">
+   <span class="markdown">Regulation (EU) 2017/745 on medical devices</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#RegulatoryFramework" title="https://w3id.org/mdivo#RegulatoryFramework">Regulatory Framework</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#_MDR_inst" title="https://w3id.org/mdivo#_MDR_inst">MDR (instance)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#IVDR" title="https://w3id.org/mdivo#IVDR">IVDR Framework</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MedicalDevice">
+  <h3>Medical Device<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#MedicalDevice</p>
+  <div class="comment">
+   <span class="markdown">A device, instrument, apparatus, software, implant or in-vitro reagent intended by the manufacturer for medical use.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ActiveDevice" title="https://w3id.org/mdivo#ActiveDevice">Active Device</a> <sup class="type-c" title="class">c</sup>, <a href="#ImplantableActiveDevice" title="https://w3id.org/mdivo#ImplantableActiveDevice">Implantable Active Device</a> <sup class="type-c" title="class">c</sup>, <a href="#ImplantableDevice" title="https://w3id.org/mdivo#ImplantableDevice">Implantable Device</a> <sup class="type-c" title="class">c</sup>, <a href="#InVitroDiagnosticDevice" title="https://w3id.org/mdivo#InVitroDiagnosticDevice">In-Vitro Diagnostic Device</a> <sup class="type-c" title="class">c</sup>, <a href="#SingleUseDevice" title="https://w3id.org/mdivo#SingleUseDevice">Single Use Device</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#fallsUnder" title="https://w3id.org/mdivo#fallsUnder">Links a medical device to its applicable regulatory framework</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasUDI" title="https://w3id.org/mdivo#hasUDI">has UDI</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasDeviceName" title="https://w3id.org/mdivo#hasDeviceName">has device name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasIncident" title="https://w3id.org/mdivo#hasIncident">has incident</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasIntendedPurpose" title="https://w3id.org/mdivo#hasIntendedPurpose">has intended purpose</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasRiskClass" title="https://w3id.org/mdivo#hasRiskClass">has risk class</a> <sup class="type-op" title="object property">op</sup>, <a href="#isIVD" title="https://w3id.org/mdivo#isIVD">is IVD</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isActive" title="https://w3id.org/mdivo#isActive">is active</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isImplantable" title="https://w3id.org/mdivo#isImplantable">is implantable</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isManufacturedBy" title="https://w3id.org/mdivo#isManufacturedBy">is manufactured by</a> <sup class="type-op" title="object property">op</sup>, <a href="#isReusable" title="https://w3id.org/mdivo#isReusable">is reusable</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#affectsDevice" title="https://w3id.org/mdivo#affectsDevice">affects device</a> <sup class="type-op" title="object property">op</sup>, <a href="#manufactures" title="https://w3id.org/mdivo#manufactures">manufactures</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="NearMissIncident">
+  <h3>Near Miss Incident<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#NearMissIncident</p>
+  <div class="comment">
+   <span class="markdown">Incident detected before causing harm to the patient or user; tracked for trend analysis under PMS obligations</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#SeriousIncident" title="https://w3id.org/mdivo#SeriousIncident">Serious Incident</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Recall">
+  <h3>Recall<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#Recall</p>
+  <div class="comment">
+   <span class="markdown">FSCA consisting in the removal of affected devices from the market and from end users</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#InSituCorrection" title="https://w3id.org/mdivo#InSituCorrection">In Situ Correction</a> <sup class="type-c" title="class">c</sup>, <a href="#SafetyAlert" title="https://w3id.org/mdivo#SafetyAlert">Safety Alert</a> <sup class="type-c" title="class">c</sup>, <a href="#UserNotice" title="https://w3id.org/mdivo#UserNotice">User Notice</a> <sup class="type-c" title="class">c</sup>, <a href="#InSituCorrection" title="https://w3id.org/mdivo#InSituCorrection">In Situ Correction</a> <sup class="type-c" title="class">c</sup>, <a href="#UserNotice" title="https://w3id.org/mdivo#UserNotice">User Notice</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="RegulatoryFramework">
+  <h3>Regulatory Framework<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#RegulatoryFramework</p>
+  <div class="comment">
+   <span class="markdown">The European regulation that governs the marketing of a given device.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#IVDR" title="https://w3id.org/mdivo#IVDR">IVDR Framework</a> <sup class="type-c" title="class">c</sup>, <a href="#MDR" title="https://w3id.org/mdivo#MDR">MDR Framework</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#fallsUnder" title="https://w3id.org/mdivo#fallsUnder">Links a medical device to its applicable regulatory framework</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Risk">
+  <h3>Risk<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#Risk</p>
+  <div class="comment">
+   <span class="markdown">An identified hazard that may be caused by or associated with a medical device</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#CybersecurityRisk" title="https://w3id.org/mdivo#CybersecurityRisk">Cybersecurity Risk</a> <sup class="type-c" title="class">c</sup>, <a href="#DiagnosticRisk" title="https://w3id.org/mdivo#DiagnosticRisk">Diagnostic Risk</a> <sup class="type-c" title="class">c</sup>, <a href="#InfectionRisk" title="https://w3id.org/mdivo#InfectionRisk">Infection Risk</a> <sup class="type-c" title="class">c</sup>, <a href="#InjuryRisk" title="https://w3id.org/mdivo#InjuryRisk">Injury Risk</a> <sup class="type-c" title="class">c</sup>, <a href="#MalfunctionRisk" title="https://w3id.org/mdivo#MalfunctionRisk">Malfunction Risk</a> <sup class="type-c" title="class">c</sup>, <a href="#SoftwareRisk" title="https://w3id.org/mdivo#SoftwareRisk">Software Risk</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasIMDRFCode" title="https://w3id.org/mdivo#hasIMDRFCode">has IMDRF Code</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasProbability" title="https://w3id.org/mdivo#hasProbability">has probability</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSeverity" title="https://w3id.org/mdivo#hasSeverity">has severity</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#realizesRisk" title="https://w3id.org/mdivo#realizesRisk">realizes risk</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="RiskClass">
+  <h3>Risk Class<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#RiskClass</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ClassA" title="https://w3id.org/mdivo#ClassA">Class A</a> <sup class="type-c" title="class">c</sup>, <a href="#ClassB" title="https://w3id.org/mdivo#ClassB">Class B</a> <sup class="type-c" title="class">c</sup>, <a href="#ClassC" title="https://w3id.org/mdivo#ClassC">Class C</a> <sup class="type-c" title="class">c</sup>, <a href="#ClassD" title="https://w3id.org/mdivo#ClassD">Class D</a> <sup class="type-c" title="class">c</sup>, <a href="#ClassI" title="https://w3id.org/mdivo#ClassI">Class I</a> <sup class="type-c" title="class">c</sup>, <a href="#ClassIII" title="https://w3id.org/mdivo#ClassIII">Class III</a> <sup class="type-c" title="class">c</sup>, <a href="#ClassIIa" title="https://w3id.org/mdivo#ClassIIa">Class IIa</a> <sup class="type-c" title="class">c</sup>, <a href="#ClassIIb" title="https://w3id.org/mdivo#ClassIIb">Class IIb</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasRiskClass" title="https://w3id.org/mdivo#hasRiskClass">has risk class</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SafetyAlert">
+  <h3>Safety Alert<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#SafetyAlert</p>
+  <div class="comment">
+   <span class="markdown">Field Safety Notice issued to inform users of a hazard without removing the device from the market.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#FSCA-001" title="https://w3id.org/mdivo#FSCA-001">Safety alert for HeartMate 3 outflow graft (FSCA-001)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#InSituCorrection" title="https://w3id.org/mdivo#InSituCorrection">In Situ Correction</a> <sup class="type-c" title="class">c</sup>, <a href="#Recall" title="https://w3id.org/mdivo#Recall">Recall</a> <sup class="type-c" title="class">c</sup>, <a href="#UserNotice" title="https://w3id.org/mdivo#UserNotice">User Notice</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SelfTestDevice">
+  <h3>Self Test Device<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#SelfTestDevice</p>
+  <div class="comment">
+   <span class="markdown">An IVD device intended by the manufacturer to be used by lay persons</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#InVitroDiagnosticDevice" title="https://w3id.org/mdivo#InVitroDiagnosticDevice">In-Vitro Diagnostic Device</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SeriousIncident">
+  <h3>Serious Incident<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#SeriousIncident</p>
+  <div class="comment">
+   <span class="markdown">Incident that directly or indirectly led, might have led or might lead to death or serious deterioration in health</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#INC-012" title="https://w3id.org/mdivo#INC-012">False negatives in cobas SARS-CoV-2 test for Omicron BA.2.86</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#INC-001" title="https://w3id.org/mdivo#INC-001">Outflow-graft obstruction in HeartMate 3 unit</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#NearMissIncident" title="https://w3id.org/mdivo#NearMissIncident">Near Miss Incident</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SingleUseDevice">
+  <h3>Single Use Device<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#SingleUseDevice</p>
+  <div class="comment">
+   <span class="markdown">A device intended to be used on a single individual during a single procedure</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SoftwareRisk">
+  <h3>Software Risk<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#SoftwareRisk</p>
+  <div class="comment">
+   <span class="markdown">Risk arising from software defects, including embedded firmware</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="UserNotice">
+  <h3>User Notice<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#UserNotice</p>
+  <div class="comment">
+   <span class="markdown">Communication to end users updating instructions for use, contraindications or training requirements.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#FSCA-012" title="https://w3id.org/mdivo#FSCA-012">User notice for cobas SARS-CoV-2 (FSCA-012)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#InSituCorrection" title="https://w3id.org/mdivo#InSituCorrection">In Situ Correction</a> <sup class="type-c" title="class">c</sup>, <a href="#InSituCorrection" title="https://w3id.org/mdivo#InSituCorrection">In Situ Correction</a> <sup class="type-c" title="class">c</sup>, <a href="#Recall" title="https://w3id.org/mdivo#Recall">Recall</a> <sup class="type-c" title="class">c</sup>, <a href="#SafetyAlert" title="https://w3id.org/mdivo#SafetyAlert">Safety Alert</a> <sup class="type-c" title="class">c</sup>, <a href="#InSituCorrection" title="https://w3id.org/mdivo#InSituCorrection">In Situ Correction</a> <sup class="type-c" title="class">c</sup>, <a href="#Recall" title="https://w3id.org/mdivo#Recall">Recall</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#affectsDevice" title="https://w3id.org/mdivo#affectsDevice">affects device</a></li>
+  <li><a href="#hasEstablishmentCountry" title="https://w3id.org/mdivo#hasEstablishmentCountry">has establishment country</a></li>
+  <li><a href="#hasFSCA" title="https://w3id.org/mdivo#hasFSCA">has FSCA</a></li>
+  <li><a href="#hasIncident" title="https://w3id.org/mdivo#hasIncident">has incident</a></li>
+  <li><a href="#hasReportingCountry" title="https://w3id.org/mdivo#hasReportingCountry">has reporting country</a></li>
+  <li><a href="#hasReportingEntity" title="https://w3id.org/mdivo#hasReportingEntity">has reporting entity</a></li>
+  <li><a href="#hasRiskClass" title="https://w3id.org/mdivo#hasRiskClass">has risk class</a></li>
+  <li><a href="#isManufacturedBy" title="https://w3id.org/mdivo#isManufacturedBy">is manufactured by</a></li>
+  <li><a href="#isSupervisedBy" title="https://w3id.org/mdivo#isSupervisedBy">is supervised by</a></li>
+  <li><a href="#fallsUnder" title="https://w3id.org/mdivo#fallsUnder">Links a medical device to its applicable regulatory framework</a></li>
+  <li><a href="#manufactures" title="https://w3id.org/mdivo#manufactures">manufactures</a></li>
+  <li><a href="#realizesRisk" title="https://w3id.org/mdivo#realizesRisk">realizes risk</a></li>
+  <li><a href="#respondsToIncident" title="https://w3id.org/mdivo#respondsToIncident">responds to incident</a></li>
+ </ul>
+ <div class="entity" id="affectsDevice">
+  <h3>affects device<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#affectsDevice</p>
+  <div class="comment">
+   <span class="markdown">Links an incident to the medical device involved in the adverse event</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasIncident" title="https://w3id.org/mdivo#hasIncident">has incident</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEstablishmentCountry">
+  <h3>has establishment country<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasEstablishmentCountry</p>
+  <div class="comment">
+   <span class="markdown">Country where the manufacturer is legally established</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Country" title="https://w3id.org/mdivo#Country">Country</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasFSCA">
+  <h3>has FSCA<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasFSCA</p>
+  <div class="comment">
+   <span class="markdown">Inverse of :respondsToIncident</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#respondsToIncident" title="https://w3id.org/mdivo#respondsToIncident">responds to incident</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasIncident">
+  <h3>has incident<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasIncident</p>
+  <div class="comment">
+   <span class="markdown">Inverse of :affectsDevice</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#affectsDevice" title="https://w3id.org/mdivo#affectsDevice">affects device</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasReportingCountry">
+  <h3>has reporting country<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasReportingCountry</p>
+  <div class="comment">
+   <span class="markdown">Country in whose territory the incident was reported</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Country" title="https://w3id.org/mdivo#Country">Country</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasReportingEntity">
+  <h3>has reporting entity<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasReportingEntity</p>
+  <div class="comment">
+   <span class="markdown">Entity that submitted the incident notification to EUDAMED</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasRiskClass">
+  <h3>has risk class<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasRiskClass</p>
+  <div class="comment">
+   <span class="markdown">Links a medical device to its risk classification</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#RiskClass" title="https://w3id.org/mdivo#RiskClass">Risk Class</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isManufacturedBy">
+  <h3>is manufactured by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#isManufacturedBy</p>
+  <div class="comment">
+   <span class="markdown">Links a medical device to the legal manufacturer that placed it on the market</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#manufactures" title="https://w3id.org/mdivo#manufactures">manufactures</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isSupervisedBy">
+  <h3>is supervised by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#isSupervisedBy</p>
+  <div class="comment">
+   <span class="markdown">National competent authority responsible for the supervision of the manufacturer</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#CompetentAuthority" title="https://w3id.org/mdivo#CompetentAuthority">Competent Authority</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="fallsUnder">
+  <h3>Links a medical device to its applicable regulatory framework<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#fallsUnder</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#RegulatoryFramework" title="https://w3id.org/mdivo#RegulatoryFramework">Regulatory Framework</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="manufactures">
+  <h3>manufactures<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#manufactures</p>
+  <div class="comment">
+   <span class="markdown">Inverse of :isManufacturedBy</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isManufacturedBy" title="https://w3id.org/mdivo#isManufacturedBy">is manufactured by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="realizesRisk">
+  <h3>realizes risk<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#realizesRisk</p>
+  <div class="comment">
+   <span class="markdown">An incident is the actual realization of a previosuly identified IMDRF risk</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="respondsToIncident">
+  <h3>responds to incident<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#respondsToIncident</p>
+  <div class="comment">
+   <span class="markdown">Links a FSCA to the incident that motivated it</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasFSCA" title="https://w3id.org/mdivo#hasFSCA">has FSCA</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#hasActionDate" title="https://w3id.org/mdivo#hasActionDate">has action date</a></li>
+  <li><a href="#hasAuthorizationNumber" title="https://w3id.org/mdivo#hasAuthorizationNumber">has authorization number</a></li>
+  <li><a href="#hasClosureDate" title="https://w3id.org/mdivo#hasClosureDate">has closure date</a></li>
+  <li><a href="#hasContactEmail" title="https://w3id.org/mdivo#hasContactEmail">has contact email</a></li>
+  <li><a href="#hasDeviceName" title="https://w3id.org/mdivo#hasDeviceName">has device name</a></li>
+  <li><a href="#hasDevicesAffectedCount" title="https://w3id.org/mdivo#hasDevicesAffectedCount">has devices affected count</a></li>
+  <li><a href="#hasEudamedFSCARef" title="https://w3id.org/mdivo#hasEudamedFSCARef">has EUDAMED FSCA reference</a></li>
+  <li><a href="#hasEudamedIncidentRef" title="https://w3id.org/mdivo#hasEudamedIncidentRef">has EUDAMED incident reference</a></li>
+  <li><a href="#hasEventDate" title="https://w3id.org/mdivo#hasEventDate">has event date</a></li>
+  <li><a href="#hasIMDRFCode" title="https://w3id.org/mdivo#hasIMDRFCode">has IMDRF Code</a></li>
+  <li><a href="#hasIntendedPurpose" title="https://w3id.org/mdivo#hasIntendedPurpose">has intended purpose</a></li>
+  <li><a href="#hasOrgName" title="https://w3id.org/mdivo#hasOrgName">has organization name</a></li>
+  <li><a href="#hasOutcome" title="https://w3id.org/mdivo#hasOutcome">has outcome</a></li>
+  <li><a href="#hasPatientAge" title="https://w3id.org/mdivo#hasPatientAge">has patient age</a></li>
+  <li><a href="#hasProbability" title="https://w3id.org/mdivo#hasProbability">has probability</a></li>
+  <li><a href="#hasReportDate" title="https://w3id.org/mdivo#hasReportDate">has report date</a></li>
+  <li><a href="#hasSeverity" title="https://w3id.org/mdivo#hasSeverity">has severity</a></li>
+  <li><a href="#hasSRN" title="https://w3id.org/mdivo#hasSRN">has SRN</a></li>
+  <li><a href="#hasStatus" title="https://w3id.org/mdivo#hasStatus">has status</a></li>
+  <li><a href="#hasUDI" title="https://w3id.org/mdivo#hasUDI">has UDI</a></li>
+  <li><a href="#isActive" title="https://w3id.org/mdivo#isActive">is active</a></li>
+  <li><a href="#isImplantable" title="https://w3id.org/mdivo#isImplantable">is implantable</a></li>
+  <li><a href="#isIVD" title="https://w3id.org/mdivo#isIVD">is IVD</a></li>
+  <li><a href="#isReusable" title="https://w3id.org/mdivo#isReusable">is reusable</a></li>
+ </ul>
+ <div class="entity" id="hasActionDate">
+  <h3>has action date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasActionDate</p>
+  <div class="comment">
+   <span class="markdown">Date on which the FSCA was issued</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAuthorizationNumber">
+  <h3>has authorization number<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasAuthorizationNumber</p>
+  <div class="comment">
+   <span class="markdown">National authorization number issued by the competent authority.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasClosureDate">
+  <h3>has closure date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasClosureDate</p>
+  <div class="comment">
+   <span class="markdown">Date on which the FSCA was officially closed.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasContactEmail">
+  <h3>has contact email<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasContactEmail</p>
+  <div class="comment">
+   <span class="markdown">Public regulatory contact e-mail of the manufacturer</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDeviceName">
+  <h3>has device name<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasDeviceName</p>
+  <div class="comment">
+   <span class="markdown">Commercial name of the medical device as registered in EUDAMED</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDevicesAffectedCount">
+  <h3>has devices affected count<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasDevicesAffectedCount</p>
+  <div class="comment">
+   <span class="markdown">Approximate number of devices affected by the FSCA</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEudamedFSCARef">
+  <h3>has EUDAMED FSCA reference<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasEudamedFSCARef</p>
+  <div class="comment">
+   <span class="markdown">Unique identifier of the FSCA in EUDAMED.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEudamedIncidentRef">
+  <h3>has EUDAMED incident reference<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasEudamedIncidentRef</p>
+  <div class="comment">
+   <span class="markdown">Unique identifier of the incident in EUDAMED</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEventDate">
+  <h3>has event date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasEventDate</p>
+  <div class="comment">
+   <span class="markdown">Date on which the clinical event actually occurred</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasIMDRFCode">
+  <h3>has IMDRF Code<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasIMDRFCode</p>
+  <div class="comment">
+   <span class="markdown">Code from the IMDRF Adverse Event Terminology</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasIntendedPurpose">
+  <h3>has intended purpose<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasIntendedPurpose</p>
+  <div class="comment">
+   <span class="markdown">Use for which a device is intended according to the manufacturer</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasOrgName">
+  <h3>has organization name<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasOrgName</p>
+  <div class="comment">
+   <span class="markdown">Legal trade name of the organization</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasOutcome">
+  <h3>has outcome<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasOutcome</p>
+  <div class="comment">
+   <span class="markdown">Brief description of the clinical outcome of the incident</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPatientAge">
+  <h3>has patient age<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasPatientAge</p>
+  <div class="comment">
+   <span class="markdown">Age in years of the patient affected by the incident</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasProbability">
+  <h3>has probability<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasProbability</p>
+  <div class="comment">
+   <span class="markdown">Probability level of risk occurrence</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasReportDate">
+  <h3>has report date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasReportDate</p>
+  <div class="comment">
+   <span class="markdown">Date on which the incident was officially reported to EUDAMED.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSeverity">
+  <h3>has severity<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasSeverity</p>
+  <div class="comment">
+   <span class="markdown">Severity level of the risk</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Risk" title="https://w3id.org/mdivo#Risk">Risk</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSRN">
+  <h3>has SRN<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasSRN</p>
+  <div class="comment">
+   <span class="markdown">Single Registration Number assigned by EUDAMED to each manufacturer</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasStatus">
+  <h3>has status<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasStatus</p>
+  <div class="comment">
+   <span class="markdown">Status of the FSCA</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#FSCA" title="https://w3id.org/mdivo#FSCA">Field Safety Corrective Action</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasUDI">
+  <h3>has UDI<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#hasUDI</p>
+  <div class="comment">
+   <span class="markdown">Unique Device Identifier - Device Identifier</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isActive">
+  <h3>is active<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#isActive</p>
+  <div class="comment">
+   <span class="markdown">Boolean flag used by the reasoner to classify the device as ActiveDevice</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isImplantable">
+  <h3>is implantable<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#isImplantable</p>
+  <div class="comment">
+   <span class="markdown">Boolean flag used by the reasoner to classify the device as ImplantableDevice</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isIVD">
+  <h3>is IVD<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#isIVD</p>
+  <div class="comment">
+   <span class="markdown">Boolean flag used by the reasoner to infer that the device falls under IVDR</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isReusable">
+  <h3>is reusable<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#isReusable</p>
+  <div class="comment">
+   <span class="markdown">Boolean flag indicating whether the device may be reused after sterilisation</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled" title="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"> <span>is Rule Enabled</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title"> <span>title</span> </a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/dc/terms/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+ </div>
+ <div class="entity" id="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled">
+  <h3>is Rule Enabled<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/license">
+  <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#Authority_BfArM" title="https://w3id.org/mdivo#Authority_BfArM">BfArM</a></li>
+  <li><a href="#_ClassC_inst" title="https://w3id.org/mdivo#_ClassC_inst">Class C (instance)</a></li>
+  <li><a href="#_ClassIII_inst" title="https://w3id.org/mdivo#_ClassIII_inst">Class III (instance)</a></li>
+  <li><a href="#DEV-017" title="https://w3id.org/mdivo#DEV-017">cobas SARS-CoV-2 RT-PCR Test</a></li>
+  <li><a href="#RSK-008" title="https://w3id.org/mdivo#RSK-008">False negative result in PCR test</a></li>
+  <li><a href="#INC-012" title="https://w3id.org/mdivo#INC-012">False negatives in cobas SARS-CoV-2 test for Omicron BA.2.86</a></li>
+  <li><a href="#http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices" title="http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices"> <span>Federal Institute for Drugs and Medical Devices</span> </a></li>
+  <li><a href="#http://dbpedia.org/resource/Germany" title="http://dbpedia.org/resource/Germany"> <span>Germany</span> </a></li>
+  <li><a href="#Country_Germany" title="https://w3id.org/mdivo#Country_Germany">Germany</a></li>
+  <li><a href="#http://dbpedia.org/resource/Health_Products_Regulatory_Authority" title="http://dbpedia.org/resource/Health_Products_Regulatory_Authority"> <span>Health Products Regulatory Authority</span> </a></li>
+  <li><a href="#DEV-001" title="https://w3id.org/mdivo#DEV-001">HeartMate 3 LVAD</a></li>
+  <li><a href="#Authority_HPRA" title="https://w3id.org/mdivo#Authority_HPRA">HPRA</a></li>
+  <li><a href="#http://dbpedia.org/resource/Ireland" title="http://dbpedia.org/resource/Ireland"> <span>Ireland</span> </a></li>
+  <li><a href="#Country_Ireland" title="https://w3id.org/mdivo#Country_Ireland">Ireland</a></li>
+  <li><a href="#_IVDR_inst" title="https://w3id.org/mdivo#_IVDR_inst">IVDR (instance)</a></li>
+  <li><a href="#_MDR_inst" title="https://w3id.org/mdivo#_MDR_inst">MDR (instance)</a></li>
+  <li><a href="#http://dbpedia.org/resource/Medtronic" title="http://dbpedia.org/resource/Medtronic"> <span>Medtronic</span> </a></li>
+  <li><a href="#MAN-001" title="https://w3id.org/mdivo#MAN-001">Medtronic plc</a></li>
+  <li><a href="#INC-001" title="https://w3id.org/mdivo#INC-001">Outflow-graft obstruction in HeartMate 3 unit</a></li>
+  <li><a href="#http://www.wikidata.org/entity/Q183" title="http://www.wikidata.org/entity/Q183"> <span>Q183</span> </a></li>
+  <li><a href="#http://www.wikidata.org/entity/Q27" title="http://www.wikidata.org/entity/Q27"> <span>Q27</span> </a></li>
+  <li><a href="#http://www.wikidata.org/entity/Q573153" title="http://www.wikidata.org/entity/Q573153"> <span>Q573153</span> </a></li>
+  <li><a href="#http://www.wikidata.org/entity/Q679041" title="http://www.wikidata.org/entity/Q679041"> <span>Q679041</span> </a></li>
+  <li><a href="#http://dbpedia.org/resource/Roche_Diagnostics" title="http://dbpedia.org/resource/Roche_Diagnostics"> <span>Roche Diagnostics</span> </a></li>
+  <li><a href="#MAN-005" title="https://w3id.org/mdivo#MAN-005">Roche Diagnostics GmbH</a></li>
+  <li><a href="#FSCA-001" title="https://w3id.org/mdivo#FSCA-001">Safety alert for HeartMate 3 outflow graft (FSCA-001)</a></li>
+  <li><a href="#RSK-003" title="https://w3id.org/mdivo#RSK-003">Thrombotic event from LVAD outflow graft</a></li>
+  <li><a href="#FSCA-012" title="https://w3id.org/mdivo#FSCA-012">User notice for cobas SARS-CoV-2 (FSCA-012)</a></li>
+ </ul>
+ <div class="entity" id="Authority_BfArM">
+  <h3>BfArM<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#Authority_BfArM</p>
+  <div class="comment">
+   <span class="markdown">Federal Institute for Drugs and Medical Devices - Germany</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#CompetentAuthority" title="https://w3id.org/mdivo#CompetentAuthority">Competent Authority</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices" title="http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices">Federal Institute for Drugs and Medical Devices</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://www.wikidata.org/entity/Q573153" title="http://www.wikidata.org/entity/Q573153">Q573153</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="_ClassC_inst">
+  <h3>Class C (instance)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#_ClassC_inst</p>
+  <div class="comment">
+   <span class="markdown">Single instance representing the IVDR risk class C</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ClassC" title="https://w3id.org/mdivo#ClassC">Class C</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="_ClassIII_inst">
+  <h3>Class III (instance)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#_ClassIII_inst</p>
+  <div class="comment">
+   <span class="markdown">Single instance representing the MDR risk class III</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ClassIII" title="https://w3id.org/mdivo#ClassIII">Class III</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DEV-017">
+  <h3>cobas SARS-CoV-2 RT-PCR Test<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#DEV-017</p>
+  <div class="comment">
+   <span class="markdown">Real-time PCR test for the qualitative detection of SARS-CoV-2 RNA</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#InVitroDiagnosticDevice" title="https://w3id.org/mdivo#InVitroDiagnosticDevice">In-Vitro Diagnostic Device</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#fallsUnder" title="https://w3id.org/mdivo#fallsUnder">Links a medical device to its applicable regulatory framework</a> <sup class="type-op" title="object property">op</sup> <a href="#_IVDR_inst" title="https://w3id.org/mdivo#_IVDR_inst">IVDR (instance)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasRiskClass" title="https://w3id.org/mdivo#hasRiskClass">has risk class</a> <sup class="type-op" title="object property">op</sup> <a href="#_ClassC_inst" title="https://w3id.org/mdivo#_ClassC_inst">Class C (instance)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#isManufacturedBy" title="https://w3id.org/mdivo#isManufacturedBy">is manufactured by</a> <sup class="type-op" title="object property">op</sup> <a href="#MAN-005" title="https://w3id.org/mdivo#MAN-005">Roche Diagnostics GmbH</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasDeviceName" title="https://w3id.org/mdivo#hasDeviceName">has device name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"cobas SARS-CoV-2 RT-PCR Test"</span>
+   </dd>
+   <dd>
+    <a href="#hasIntendedPurpose" title="https://w3id.org/mdivo#hasIntendedPurpose">has intended purpose</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Qualitative detection of SARS-CoV-2 RNA from nasopharyngeal and oropharyngeal swabs."</span>
+   </dd>
+   <dd>
+    <a href="#hasUDI" title="https://w3id.org/mdivo#hasUDI">has UDI</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"(01)07613336202345"</span>
+   </dd>
+   <dd>
+    <a href="#isActive" title="https://w3id.org/mdivo#isActive">is active</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"false"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
+    <a href="#isIVD" title="https://w3id.org/mdivo#isIVD">is IVD</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
+    <a href="#isImplantable" title="https://w3id.org/mdivo#isImplantable">is implantable</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"false"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
+    <a href="#isReusable" title="https://w3id.org/mdivo#isReusable">is reusable</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"false"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="RSK-008">
+  <h3>False negative result in PCR test<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#RSK-008</p>
+  <div class="comment">
+   <span class="markdown">Risk that a PCR-based diagnostic test fails to detect a true positive sample</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#DiagnosticRisk" title="https://w3id.org/mdivo#DiagnosticRisk">Diagnostic Risk</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasIMDRFCode" title="https://w3id.org/mdivo#hasIMDRFCode">has IMDRF Code</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"B0102"</span>
+   </dd>
+   <dd>
+    <a href="#hasProbability" title="https://w3id.org/mdivo#hasProbability">has probability</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Medium"</span>
+   </dd>
+   <dd>
+    <a href="#hasSeverity" title="https://w3id.org/mdivo#hasSeverity">has severity</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Serious"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="INC-012">
+  <h3>False negatives in cobas SARS-CoV-2 test for Omicron BA.2.86<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#INC-012</p>
+  <div class="comment">
+   <span class="markdown">Cluster of false negative results detected in samples positive for the BA.2.86 Omicron subvariant</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SeriousIncident" title="https://w3id.org/mdivo#SeriousIncident">Serious Incident</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#affectsDevice" title="https://w3id.org/mdivo#affectsDevice">affects device</a> <sup class="type-op" title="object property">op</sup> <a href="#DEV-017" title="https://w3id.org/mdivo#DEV-017">cobas SARS-CoV-2 RT-PCR Test</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasReportingCountry" title="https://w3id.org/mdivo#hasReportingCountry">has reporting country</a> <sup class="type-op" title="object property">op</sup> <a href="#Country_Germany" title="https://w3id.org/mdivo#Country_Germany">Germany</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasReportingEntity" title="https://w3id.org/mdivo#hasReportingEntity">has reporting entity</a> <sup class="type-op" title="object property">op</sup> <a href="#MAN-005" title="https://w3id.org/mdivo#MAN-005">Roche Diagnostics GmbH</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#realizesRisk" title="https://w3id.org/mdivo#realizesRisk">realizes risk</a> <sup class="type-op" title="object property">op</sup> <a href="#RSK-008" title="https://w3id.org/mdivo#RSK-008">False negative result in PCR test</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasEudamedIncidentRef" title="https://w3id.org/mdivo#hasEudamedIncidentRef">has EUDAMED incident reference</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"EU-INC-2024-000012"</span>
+   </dd>
+   <dd>
+    <a href="#hasEventDate" title="https://w3id.org/mdivo#hasEventDate">has event date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2024-02-01"^^<a href="http://www.w3.org/2001/XMLSchema#date" target="_blank" title="http://www.w3.org/2001/XMLSchema#date">date</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasOutcome" title="https://w3id.org/mdivo#hasOutcome">has outcome</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Diagnostic delay, revised primer set under development."</span>
+   </dd>
+   <dd>
+    <a href="#hasReportDate" title="https://w3id.org/mdivo#hasReportDate">has report date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2024-02-08"^^<a href="http://www.w3.org/2001/XMLSchema#date" target="_blank" title="http://www.w3.org/2001/XMLSchema#date">date</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices">
+  <h3>Federal Institute for Drugs and Medical Devices<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#Authority_BfArM" title="https://w3id.org/mdivo#Authority_BfArM">BfArM</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="#Authority_BfArM" title="https://w3id.org/mdivo#Authority_BfArM">BfArM</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://dbpedia.org/resource/Germany">
+  <h3>Germany<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://dbpedia.org/resource/Germany</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#Country_Germany" title="https://w3id.org/mdivo#Country_Germany">Germany</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="#Country_Germany" title="https://w3id.org/mdivo#Country_Germany">Germany</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Country_Germany">
+  <h3>Germany<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#Country_Germany</p>
+  <div class="comment">
+   <span class="markdown">Federal Republic of Germany</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Country" title="https://w3id.org/mdivo#Country">Country</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#http://dbpedia.org/resource/Germany" title="http://dbpedia.org/resource/Germany">Germany</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://www.wikidata.org/entity/Q183" title="http://www.wikidata.org/entity/Q183">Q183</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://dbpedia.org/resource/Health_Products_Regulatory_Authority">
+  <h3>Health Products Regulatory Authority<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://dbpedia.org/resource/Health_Products_Regulatory_Authority</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#Authority_HPRA" title="https://w3id.org/mdivo#Authority_HPRA">HPRA</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="#Authority_HPRA" title="https://w3id.org/mdivo#Authority_HPRA">HPRA</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DEV-001">
+  <h3>HeartMate 3 LVAD<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#DEV-001</p>
+  <div class="comment">
+   <span class="markdown">Centrifugal flow left ventricular assist device for advanced heart failure.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ImplantableActiveDevice" title="https://w3id.org/mdivo#ImplantableActiveDevice">Implantable Active Device</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#fallsUnder" title="https://w3id.org/mdivo#fallsUnder">Links a medical device to its applicable regulatory framework</a> <sup class="type-op" title="object property">op</sup> <a href="#_MDR_inst" title="https://w3id.org/mdivo#_MDR_inst">MDR (instance)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasRiskClass" title="https://w3id.org/mdivo#hasRiskClass">has risk class</a> <sup class="type-op" title="object property">op</sup> <a href="#_ClassIII_inst" title="https://w3id.org/mdivo#_ClassIII_inst">Class III (instance)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#isManufacturedBy" title="https://w3id.org/mdivo#isManufacturedBy">is manufactured by</a> <sup class="type-op" title="object property">op</sup> <a href="#MAN-001" title="https://w3id.org/mdivo#MAN-001">Medtronic plc</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasDeviceName" title="https://w3id.org/mdivo#hasDeviceName">has device name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"HeartMate 3 LVAD"</span>
+   </dd>
+   <dd>
+    <a href="#hasIntendedPurpose" title="https://w3id.org/mdivo#hasIntendedPurpose">has intended purpose</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Long term mechanical circulatory support for patients with advanced refractory heart failure."</span>
+   </dd>
+   <dd>
+    <a href="#hasUDI" title="https://w3id.org/mdivo#hasUDI">has UDI</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"(01)00380740009095"</span>
+   </dd>
+   <dd>
+    <a href="#isActive" title="https://w3id.org/mdivo#isActive">is active</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
+    <a href="#isIVD" title="https://w3id.org/mdivo#isIVD">is IVD</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"false"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
+    <a href="#isImplantable" title="https://w3id.org/mdivo#isImplantable">is implantable</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+   <dd>
+    <a href="#isReusable" title="https://w3id.org/mdivo#isReusable">is reusable</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"false"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Authority_HPRA">
+  <h3>HPRA<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#Authority_HPRA</p>
+  <div class="comment">
+   <span class="markdown">Health Products Regulatory Authority - Ireland</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#CompetentAuthority" title="https://w3id.org/mdivo#CompetentAuthority">Competent Authority</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#http://dbpedia.org/resource/Health_Products_Regulatory_Authority" title="http://dbpedia.org/resource/Health_Products_Regulatory_Authority">Health Products Regulatory Authority</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://dbpedia.org/resource/Ireland">
+  <h3>Ireland<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://dbpedia.org/resource/Ireland</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#Country_Ireland" title="https://w3id.org/mdivo#Country_Ireland">Ireland</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="#Country_Ireland" title="https://w3id.org/mdivo#Country_Ireland">Ireland</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Country_Ireland">
+  <h3>Ireland<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#Country_Ireland</p>
+  <div class="comment">
+   <span class="markdown">Republic of Ireland</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Country" title="https://w3id.org/mdivo#Country">Country</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#http://dbpedia.org/resource/Ireland" title="http://dbpedia.org/resource/Ireland">Ireland</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://www.wikidata.org/entity/Q27" title="http://www.wikidata.org/entity/Q27">Q27</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="_IVDR_inst">
+  <h3>IVDR (instance)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#_IVDR_inst</p>
+  <div class="comment">
+   <span class="markdown">Single instance representing the IVDR regulatory framework</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#IVDR" title="https://w3id.org/mdivo#IVDR">IVDR Framework</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="_MDR_inst">
+  <h3>MDR (instance)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#_MDR_inst</p>
+  <div class="comment">
+   <span class="markdown">Single instance representing the MDR regulatory framework</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#MDR" title="https://w3id.org/mdivo#MDR">MDR Framework</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://dbpedia.org/resource/Medtronic">
+  <h3>Medtronic<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://dbpedia.org/resource/Medtronic</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#MAN-001" title="https://w3id.org/mdivo#MAN-001">Medtronic plc</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="#MAN-001" title="https://w3id.org/mdivo#MAN-001">Medtronic plc</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MAN-001">
+  <h3>Medtronic plc<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#MAN-001</p>
+  <div class="comment">
+   <span class="markdown">Medical device multinational headquartered in Dublin, Ireland. Manufacturer of the HeartMate 3 LVAD.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#http://dbpedia.org/resource/Medtronic" title="http://dbpedia.org/resource/Medtronic">Medtronic</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://www.wikidata.org/entity/Q679041" title="http://www.wikidata.org/entity/Q679041">Q679041</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasEstablishmentCountry" title="https://w3id.org/mdivo#hasEstablishmentCountry">has establishment country</a> <sup class="type-op" title="object property">op</sup> <a href="#Country_Ireland" title="https://w3id.org/mdivo#Country_Ireland">Ireland</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#isSupervisedBy" title="https://w3id.org/mdivo#isSupervisedBy">is supervised by</a> <sup class="type-op" title="object property">op</sup> <a href="#Authority_HPRA" title="https://w3id.org/mdivo#Authority_HPRA">HPRA</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasAuthorizationNumber" title="https://w3id.org/mdivo#hasAuthorizationNumber">has authorization number</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"IE/2023/000123"</span>
+   </dd>
+   <dd>
+    <a href="#hasContactEmail" title="https://w3id.org/mdivo#hasContactEmail">has contact email</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"regulatory.affairs@medtronic.com"</span>
+   </dd>
+   <dd>
+    <a href="#hasOrgName" title="https://w3id.org/mdivo#hasOrgName">has organization name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Medtronic plc"</span>
+   </dd>
+   <dd>
+    <a href="#hasSRN" title="https://w3id.org/mdivo#hasSRN">has SRN</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"IE-MF-000001234"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="INC-001">
+  <h3>Outflow-graft obstruction in HeartMate 3 unit<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#INC-001</p>
+  <div class="comment">
+   <span class="markdown">Patient experienced thrombotic obstruction of the outflow graft requiring urgent surgical revision</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SeriousIncident" title="https://w3id.org/mdivo#SeriousIncident">Serious Incident</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#affectsDevice" title="https://w3id.org/mdivo#affectsDevice">affects device</a> <sup class="type-op" title="object property">op</sup> <a href="#DEV-001" title="https://w3id.org/mdivo#DEV-001">HeartMate 3 LVAD</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasReportingCountry" title="https://w3id.org/mdivo#hasReportingCountry">has reporting country</a> <sup class="type-op" title="object property">op</sup> <a href="#Country_Ireland" title="https://w3id.org/mdivo#Country_Ireland">Ireland</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasReportingEntity" title="https://w3id.org/mdivo#hasReportingEntity">has reporting entity</a> <sup class="type-op" title="object property">op</sup> <a href="#MAN-001" title="https://w3id.org/mdivo#MAN-001">Medtronic plc</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#realizesRisk" title="https://w3id.org/mdivo#realizesRisk">realizes risk</a> <sup class="type-op" title="object property">op</sup> <a href="#RSK-003" title="https://w3id.org/mdivo#RSK-003">Thrombotic event from LVAD outflow graft</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasEudamedIncidentRef" title="https://w3id.org/mdivo#hasEudamedIncidentRef">has EUDAMED incident reference</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"EU-INC-2024-000001"</span>
+   </dd>
+   <dd>
+    <a href="#hasEventDate" title="https://w3id.org/mdivo#hasEventDate">has event date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2024-01-15"^^<a href="http://www.w3.org/2001/XMLSchema#date" target="_blank" title="http://www.w3.org/2001/XMLSchema#date">date</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasOutcome" title="https://w3id.org/mdivo#hasOutcome">has outcome</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Surgical revision performed"</span>
+   </dd>
+   <dd>
+    <a href="#hasPatientAge" title="https://w3id.org/mdivo#hasPatientAge">has patient age</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"64"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasReportDate" title="https://w3id.org/mdivo#hasReportDate">has report date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2024-01-15"^^<a href="http://www.w3.org/2001/XMLSchema#date" target="_blank" title="http://www.w3.org/2001/XMLSchema#date">date</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.wikidata.org/entity/Q183">
+  <h3>Q183<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.wikidata.org/entity/Q183</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#Country_Germany" title="https://w3id.org/mdivo#Country_Germany">Germany</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="#Country_Germany" title="https://w3id.org/mdivo#Country_Germany">Germany</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.wikidata.org/entity/Q27">
+  <h3>Q27<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.wikidata.org/entity/Q27</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#Country_Ireland" title="https://w3id.org/mdivo#Country_Ireland">Ireland</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="#Country_Ireland" title="https://w3id.org/mdivo#Country_Ireland">Ireland</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.wikidata.org/entity/Q573153">
+  <h3>Q573153<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.wikidata.org/entity/Q573153</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#Authority_BfArM" title="https://w3id.org/mdivo#Authority_BfArM">BfArM</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="#Authority_BfArM" title="https://w3id.org/mdivo#Authority_BfArM">BfArM</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.wikidata.org/entity/Q679041">
+  <h3>Q679041<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.wikidata.org/entity/Q679041</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#MAN-001" title="https://w3id.org/mdivo#MAN-001">Medtronic plc</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="#MAN-001" title="https://w3id.org/mdivo#MAN-001">Medtronic plc</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://dbpedia.org/resource/Roche_Diagnostics">
+  <h3>Roche Diagnostics<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://dbpedia.org/resource/Roche_Diagnostics</p>
+  <dl class="description">
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#MAN-005" title="https://w3id.org/mdivo#MAN-005">Roche Diagnostics GmbH</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="external property">ep</sup> <a href="#MAN-005" title="https://w3id.org/mdivo#MAN-005">Roche Diagnostics GmbH</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MAN-005">
+  <h3>Roche Diagnostics GmbH<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#MAN-005</p>
+  <div class="comment">
+   <span class="markdown">German subsidiary of F. Hoffmann La Roche AG specialised in in-vitro diagnostics</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#Manufacturer" title="https://w3id.org/mdivo#Manufacturer">Manufacturer</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is same as
+   </dt>
+   <dd>
+    <a href="#http://dbpedia.org/resource/Roche_Diagnostics" title="http://dbpedia.org/resource/Roche_Diagnostics">Roche Diagnostics</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasEstablishmentCountry" title="https://w3id.org/mdivo#hasEstablishmentCountry">has establishment country</a> <sup class="type-op" title="object property">op</sup> <a href="#Country_Germany" title="https://w3id.org/mdivo#Country_Germany">Germany</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#isSupervisedBy" title="https://w3id.org/mdivo#isSupervisedBy">is supervised by</a> <sup class="type-op" title="object property">op</sup> <a href="#Authority_BfArM" title="https://w3id.org/mdivo#Authority_BfArM">BfArM</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasAuthorizationNumber" title="https://w3id.org/mdivo#hasAuthorizationNumber">has authorization number</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"DE/2023/000567"</span>
+   </dd>
+   <dd>
+    <a href="#hasContactEmail" title="https://w3id.org/mdivo#hasContactEmail">has contact email</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"diagnostics.regulatory@roche.com"</span>
+   </dd>
+   <dd>
+    <a href="#hasOrgName" title="https://w3id.org/mdivo#hasOrgName">has organization name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Roche Diagnostics GmbH"</span>
+   </dd>
+   <dd>
+    <a href="#hasSRN" title="https://w3id.org/mdivo#hasSRN">has SRN</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"DE-MF-000005678"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FSCA-001">
+  <h3>Safety alert for HeartMate 3 outflow graft (FSCA-001)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#FSCA-001</p>
+  <div class="comment">
+   <span class="markdown">Field Safety Notice issued by Medtronic warning clinicians of the increased risk of outflow graft obstruction</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#SafetyAlert" title="https://w3id.org/mdivo#SafetyAlert">Safety Alert</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#respondsToIncident" title="https://w3id.org/mdivo#respondsToIncident">responds to incident</a> <sup class="type-op" title="object property">op</sup> <a href="#INC-001" title="https://w3id.org/mdivo#INC-001">Outflow-graft obstruction in HeartMate 3 unit</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasActionDate" title="https://w3id.org/mdivo#hasActionDate">has action date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2024-01-22"^^<a href="http://www.w3.org/2001/XMLSchema#date" target="_blank" title="http://www.w3.org/2001/XMLSchema#date">date</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasDevicesAffectedCount" title="https://w3id.org/mdivo#hasDevicesAffectedCount">has devices affected count</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"850"</span>
+   </dd>
+   <dd>
+    <a href="#hasEudamedFSCARef" title="https://w3id.org/mdivo#hasEudamedFSCARef">has EUDAMED FSCA reference</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"EU-FSCA-2024-000001"</span>
+   </dd>
+   <dd>
+    <a href="#hasStatus" title="https://w3id.org/mdivo#hasStatus">has status</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Open"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="RSK-003">
+  <h3>Thrombotic event from LVAD outflow graft<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#RSK-003</p>
+  <div class="comment">
+   <span class="markdown">Risk of stroke or pulmonary embolism caused by thrombus formation in the outflow graft of a ventricular assist device.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#InjuryRisk" title="https://w3id.org/mdivo#InjuryRisk">Injury Risk</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasIMDRFCode" title="https://w3id.org/mdivo#hasIMDRFCode">has IMDRF Code</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"A0201"</span>
+   </dd>
+   <dd>
+    <a href="#hasProbability" title="https://w3id.org/mdivo#hasProbability">has probability</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Medium"</span>
+   </dd>
+   <dd>
+    <a href="#hasSeverity" title="https://w3id.org/mdivo#hasSeverity">has severity</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Critical"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FSCA-012">
+  <h3>User notice for cobas SARS-CoV-2 (FSCA-012)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/mdivo#FSCA-012</p>
+  <div class="comment">
+   <span class="markdown">User notice issued by Roche advising laboratories to combine results with epidemiological data while a primer update is validated.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#UserNotice" title="https://w3id.org/mdivo#UserNotice">User Notice</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#respondsToIncident" title="https://w3id.org/mdivo#respondsToIncident">responds to incident</a> <sup class="type-op" title="object property">op</sup> <a href="#INC-012" title="https://w3id.org/mdivo#INC-012">False negatives in cobas SARS-CoV-2 test for Omicron BA.2.86</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasActionDate" title="https://w3id.org/mdivo#hasActionDate">has action date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2024-02-15"^^<a href="http://www.w3.org/2001/XMLSchema#date" target="_blank" title="http://www.w3.org/2001/XMLSchema#date">date</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasClosureDate" title="https://w3id.org/mdivo#hasClosureDate">has closure date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2024-04-30"^^<a href="http://www.w3.org/2001/XMLSchema#date" target="_blank" title="http://www.w3.org/2001/XMLSchema#date">date</a> </span>
+   </dd>
+   <dd>
+    <a href="#hasDevicesAffectedCount" title="https://w3id.org/mdivo#hasDevicesAffectedCount">has devices affected count</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"12500"</span>
+   </dd>
+   <dd>
+    <a href="#hasEudamedFSCARef" title="https://w3id.org/mdivo#hasEudamedFSCARef">has EUDAMED FSCA reference</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"EU-FSCA-2024-000012"</span>
+   </dd>
+   <dd>
+    <a href="#hasStatus" title="https://w3id.org/mdivo#hasStatus">has status</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Closed"</span>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="swrlrules">
+ <h3 id="swrlrules" class="list">SWRL rules</h3>
+ <ul class="hlist">
+  <li><a href="#d4e1972">Rule_ImplantableActive</a></li>
+  <li><a href="#d4e1888">Rule_IVDFallsUnderIVDR</a></li>
+  <li><a href="#d4e2077">Rule_ManufacturerIsReportingEntity</a></li>
+ </ul>
+ <div class="entity" id="d4e1972">
+  <h3>Rule_ImplantableActive<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p>If a medical device has both isImplantable=true and isActive=true, it is classified as an ImplantableActiveDevice.<br><br><a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>(?d) , <a href="#isImplantable" title="https://w3id.org/mdivo#isImplantable">is implantable</a> <sup class="type-dp" title="data property">dp</sup>(?d,"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>) , <a href="#isActive" title="https://w3id.org/mdivo#isActive">is active</a> <sup class="type-dp" title="data property">dp</sup>(?d,"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>) -&gt; <a href="#ImplantableActiveDevice" title="https://w3id.org/mdivo#ImplantableActiveDevice">Implantable Active Device</a> <sup class="type-c" title="class">c</sup>(?d)</p>
+ </div>
+ <div class="entity" id="d4e1888">
+  <h3>Rule_IVDFallsUnderIVDR<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p>If a medical device has isIVD=true, the reasoner infers that it falls under the IVDR regulatory framework.<br><br><a href="#MedicalDevice" title="https://w3id.org/mdivo#MedicalDevice">Medical Device</a> <sup class="type-c" title="class">c</sup>(?d) , <a href="#isIVD" title="https://w3id.org/mdivo#isIVD">is IVD</a> <sup class="type-dp" title="data property">dp</sup>(?d,"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>) -&gt; <a href="#fallsUnder" title="https://w3id.org/mdivo#fallsUnder">Links a medical device to its applicable regulatory framework</a> <sup class="type-op" title="object property">op</sup>(?d,?_IVDR_inst)</p>
+ </div>
+ <div class="entity" id="d4e2077">
+  <h3>Rule_ManufacturerIsReportingEntity<span class="backlink">back to <a href="#toc">ToC</a> or <a href="#swrlrules">SWRL ToC</a> </span></h3>
+  <p>If an incident affects a device manufactured by M, then M is the reporting entity of the incident.<br><br><a href="#Incident" title="https://w3id.org/mdivo#Incident">Incident</a> <sup class="type-c" title="class">c</sup>(?i) , <a href="#affectsDevice" title="https://w3id.org/mdivo#affectsDevice">affects device</a> <sup class="type-op" title="object property">op</sup>(?i,?d) , <a href="#isManufacturedBy" title="https://w3id.org/mdivo#isManufacturedBy">is manufactured by</a> <sup class="type-op" title="object property">op</sup>(?d,?m) -&gt; <a href="#hasReportingEntity" title="https://w3id.org/mdivo#hasReportingEntity">has reporting entity</a> <sup class="type-op" title="object property">op</sup>(?i,?m)</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+<sup class="type-ep" title="External Properties">ep</sup>: External Properties
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

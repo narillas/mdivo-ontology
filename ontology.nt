@@ -1,0 +1,1010 @@
+<https://w3id.org/mdivo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/mdivo> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/mdivo/1.0> .
+<https://w3id.org/mdivo> <http://purl.org/dc/terms/creator> "Nil Arilla"@en .
+<https://w3id.org/mdivo> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/" .
+<https://w3id.org/mdivo> <http://purl.org/dc/terms/title> "MDIVO Ontology"@en .
+<https://w3id.org/mdivo> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontology for the European catalogue of high risk medical devices and in-vitro diagnostic devices, aligned with EU Regulations MDR (2017/745) and IVDR (2017/746) and the EUDAMED database."@en .
+<https://w3id.org/mdivo> <http://www.w3.org/2000/01/rdf-schema#label> "Medical Devices and In-Vitro Diagnostics Ontology (MDIVO)"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/mdivo#affectsDevice
+<https://w3id.org/mdivo#affectsDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#affectsDevice> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/mdivo#hasIncident> .
+<https://w3id.org/mdivo#affectsDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#affectsDevice> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#affectsDevice> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#affectsDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an incident to the medical device involved in the adverse event"@en .
+<https://w3id.org/mdivo#affectsDevice> <http://www.w3.org/2000/01/rdf-schema#label> "affects device"@en .
+# 
+# https://w3id.org/mdivo#fallsUnder
+<https://w3id.org/mdivo#fallsUnder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#fallsUnder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#fallsUnder> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#fallsUnder> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#RegulatoryFramework> .
+<https://w3id.org/mdivo#fallsUnder> <http://www.w3.org/2000/01/rdf-schema#label> "Links a medical device to its applicable regulatory framework"@en .
+<https://w3id.org/mdivo#fallsUnder> <http://www.w3.org/2000/01/rdf-schema#label> "falls under"@en .
+# 
+# https://w3id.org/mdivo#hasEstablishmentCountry
+<https://w3id.org/mdivo#hasEstablishmentCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#hasEstablishmentCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasEstablishmentCountry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#hasEstablishmentCountry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#Country> .
+<https://w3id.org/mdivo#hasEstablishmentCountry> <http://www.w3.org/2000/01/rdf-schema#comment> "Country where the manufacturer is legally established"@en .
+<https://w3id.org/mdivo#hasEstablishmentCountry> <http://www.w3.org/2000/01/rdf-schema#label> "has establishment country"@en .
+# 
+# https://w3id.org/mdivo#hasFSCA
+<https://w3id.org/mdivo#hasFSCA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#hasFSCA> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/mdivo#respondsToIncident> .
+<https://w3id.org/mdivo#hasFSCA> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#hasFSCA> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#hasFSCA> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of :respondsToIncident"@en .
+<https://w3id.org/mdivo#hasFSCA> <http://www.w3.org/2000/01/rdf-schema#label> "has FSCA"@en .
+# 
+# https://w3id.org/mdivo#hasIncident
+<https://w3id.org/mdivo#hasIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#hasIncident> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#hasIncident> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#hasIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of :affectsDevice"@en .
+<https://w3id.org/mdivo#hasIncident> <http://www.w3.org/2000/01/rdf-schema#label> "has incident"@en .
+# 
+# https://w3id.org/mdivo#hasReportingCountry
+<https://w3id.org/mdivo#hasReportingCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#hasReportingCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasReportingCountry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#hasReportingCountry> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#Country> .
+<https://w3id.org/mdivo#hasReportingCountry> <http://www.w3.org/2000/01/rdf-schema#comment> "Country in whose territory the incident was reported"@en .
+<https://w3id.org/mdivo#hasReportingCountry> <http://www.w3.org/2000/01/rdf-schema#label> "has reporting country"@en .
+# 
+# https://w3id.org/mdivo#hasReportingEntity
+<https://w3id.org/mdivo#hasReportingEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#hasReportingEntity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#hasReportingEntity> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#hasReportingEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Entity that submitted the incident notification to EUDAMED"@en .
+<https://w3id.org/mdivo#hasReportingEntity> <http://www.w3.org/2000/01/rdf-schema#label> "has reporting entity"@en .
+# 
+# https://w3id.org/mdivo#hasRiskClass
+<https://w3id.org/mdivo#hasRiskClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#hasRiskClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasRiskClass> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#hasRiskClass> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#RiskClass> .
+<https://w3id.org/mdivo#hasRiskClass> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a medical device to its risk classification"@en .
+<https://w3id.org/mdivo#hasRiskClass> <http://www.w3.org/2000/01/rdf-schema#label> "has risk class"@en .
+# 
+# https://w3id.org/mdivo#isManufacturedBy
+<https://w3id.org/mdivo#isManufacturedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#isManufacturedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/mdivo#manufactures> .
+<https://w3id.org/mdivo#isManufacturedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#isManufacturedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#isManufacturedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#isManufacturedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a medical device to the legal manufacturer that placed it on the market"@en .
+<https://w3id.org/mdivo#isManufacturedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is manufactured by"@en .
+# 
+# https://w3id.org/mdivo#isSupervisedBy
+<https://w3id.org/mdivo#isSupervisedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#isSupervisedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#isSupervisedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#isSupervisedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#CompetentAuthority> .
+<https://w3id.org/mdivo#isSupervisedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "National competent authority responsible for the supervision of the manufacturer"@en .
+<https://w3id.org/mdivo#isSupervisedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is supervised by"@en .
+# 
+# https://w3id.org/mdivo#manufactures
+<https://w3id.org/mdivo#manufactures> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#manufactures> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#manufactures> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#manufactures> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of :isManufacturedBy"@en .
+<https://w3id.org/mdivo#manufactures> <http://www.w3.org/2000/01/rdf-schema#label> "manufactures"@en .
+# 
+# https://w3id.org/mdivo#realizesRisk
+<https://w3id.org/mdivo#realizesRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#realizesRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#realizesRisk> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#realizesRisk> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#Risk> .
+<https://w3id.org/mdivo#realizesRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "An incident is the actual realization of a previosuly identified IMDRF risk"@en .
+<https://w3id.org/mdivo#realizesRisk> <http://www.w3.org/2000/01/rdf-schema#label> "realizes risk"@en .
+# 
+# https://w3id.org/mdivo#respondsToIncident
+<https://w3id.org/mdivo#respondsToIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mdivo#respondsToIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#respondsToIncident> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#respondsToIncident> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#respondsToIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a FSCA to the incident that motivated it"@en .
+<https://w3id.org/mdivo#respondsToIncident> <http://www.w3.org/2000/01/rdf-schema#label> "responds to incident"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/mdivo#hasActionDate
+<https://w3id.org/mdivo#hasActionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasActionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasActionDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#hasActionDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/mdivo#hasActionDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date on which the FSCA was issued"@en .
+<https://w3id.org/mdivo#hasActionDate> <http://www.w3.org/2000/01/rdf-schema#label> "has action date"@en .
+# 
+# https://w3id.org/mdivo#hasAuthorizationNumber
+<https://w3id.org/mdivo#hasAuthorizationNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasAuthorizationNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasAuthorizationNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#hasAuthorizationNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasAuthorizationNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "National authorization number issued by the competent authority."@en .
+<https://w3id.org/mdivo#hasAuthorizationNumber> <http://www.w3.org/2000/01/rdf-schema#label> "has authorization number"@en .
+# 
+# https://w3id.org/mdivo#hasClosureDate
+<https://w3id.org/mdivo#hasClosureDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasClosureDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#hasClosureDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/mdivo#hasClosureDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date on which the FSCA was officially closed."@en .
+<https://w3id.org/mdivo#hasClosureDate> <http://www.w3.org/2000/01/rdf-schema#label> "has closure date"@en .
+# 
+# https://w3id.org/mdivo#hasContactEmail
+<https://w3id.org/mdivo#hasContactEmail> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasContactEmail> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#hasContactEmail> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasContactEmail> <http://www.w3.org/2000/01/rdf-schema#comment> "Public regulatory contact e-mail of the manufacturer"@en .
+<https://w3id.org/mdivo#hasContactEmail> <http://www.w3.org/2000/01/rdf-schema#label> "has contact email"@en .
+# 
+# https://w3id.org/mdivo#hasDeviceName
+<https://w3id.org/mdivo#hasDeviceName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasDeviceName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasDeviceName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#hasDeviceName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasDeviceName> <http://www.w3.org/2000/01/rdf-schema#comment> "Commercial name of the medical device as registered in EUDAMED"@en .
+<https://w3id.org/mdivo#hasDeviceName> <http://www.w3.org/2000/01/rdf-schema#label> "has device name"@en .
+# 
+# https://w3id.org/mdivo#hasDevicesAffectedCount
+<https://w3id.org/mdivo#hasDevicesAffectedCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasDevicesAffectedCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasDevicesAffectedCount> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#hasDevicesAffectedCount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasDevicesAffectedCount> <http://www.w3.org/2000/01/rdf-schema#comment> "Approximate number of devices affected by the FSCA"@en .
+<https://w3id.org/mdivo#hasDevicesAffectedCount> <http://www.w3.org/2000/01/rdf-schema#label> "has devices affected count"@en .
+# 
+# https://w3id.org/mdivo#hasEudamedFSCARef
+<https://w3id.org/mdivo#hasEudamedFSCARef> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasEudamedFSCARef> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasEudamedFSCARef> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#hasEudamedFSCARef> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasEudamedFSCARef> <http://www.w3.org/2000/01/rdf-schema#comment> "Unique identifier of the FSCA in EUDAMED."@en .
+<https://w3id.org/mdivo#hasEudamedFSCARef> <http://www.w3.org/2000/01/rdf-schema#label> "has EUDAMED FSCA reference"@en .
+# 
+# https://w3id.org/mdivo#hasEudamedIncidentRef
+<https://w3id.org/mdivo#hasEudamedIncidentRef> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasEudamedIncidentRef> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasEudamedIncidentRef> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#hasEudamedIncidentRef> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasEudamedIncidentRef> <http://www.w3.org/2000/01/rdf-schema#comment> "Unique identifier of the incident in EUDAMED"@en .
+<https://w3id.org/mdivo#hasEudamedIncidentRef> <http://www.w3.org/2000/01/rdf-schema#label> "has EUDAMED incident reference"@en .
+# 
+# https://w3id.org/mdivo#hasEventDate
+<https://w3id.org/mdivo#hasEventDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasEventDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasEventDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#hasEventDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/mdivo#hasEventDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date on which the clinical event actually occurred"@en .
+<https://w3id.org/mdivo#hasEventDate> <http://www.w3.org/2000/01/rdf-schema#label> "has event date"@en .
+# 
+# https://w3id.org/mdivo#hasIMDRFCode
+<https://w3id.org/mdivo#hasIMDRFCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasIMDRFCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasIMDRFCode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Risk> .
+<https://w3id.org/mdivo#hasIMDRFCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasIMDRFCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Code from the IMDRF Adverse Event Terminology"@en .
+<https://w3id.org/mdivo#hasIMDRFCode> <http://www.w3.org/2000/01/rdf-schema#label> "has IMDRF Code"@en .
+# 
+# https://w3id.org/mdivo#hasIntendedPurpose
+<https://w3id.org/mdivo#hasIntendedPurpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasIntendedPurpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasIntendedPurpose> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#hasIntendedPurpose> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasIntendedPurpose> <http://www.w3.org/2000/01/rdf-schema#comment> "Use for which a device is intended according to the manufacturer"@en .
+<https://w3id.org/mdivo#hasIntendedPurpose> <http://www.w3.org/2000/01/rdf-schema#label> "has intended purpose"@en .
+# 
+# https://w3id.org/mdivo#hasOrgName
+<https://w3id.org/mdivo#hasOrgName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasOrgName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasOrgName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#hasOrgName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasOrgName> <http://www.w3.org/2000/01/rdf-schema#comment> "Legal trade name of the organization"@en .
+<https://w3id.org/mdivo#hasOrgName> <http://www.w3.org/2000/01/rdf-schema#label> "has organization name"@en .
+# 
+# https://w3id.org/mdivo#hasOutcome
+<https://w3id.org/mdivo#hasOutcome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasOutcome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasOutcome> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#hasOutcome> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasOutcome> <http://www.w3.org/2000/01/rdf-schema#comment> "Brief description of the clinical outcome of the incident"@en .
+<https://w3id.org/mdivo#hasOutcome> <http://www.w3.org/2000/01/rdf-schema#label> "has outcome"@en .
+# 
+# https://w3id.org/mdivo#hasPatientAge
+<https://w3id.org/mdivo#hasPatientAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasPatientAge> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#hasPatientAge> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/mdivo#hasPatientAge> <http://www.w3.org/2000/01/rdf-schema#comment> "Age in years of the patient affected by the incident"@en .
+<https://w3id.org/mdivo#hasPatientAge> <http://www.w3.org/2000/01/rdf-schema#label> "has patient age"@en .
+# 
+# https://w3id.org/mdivo#hasProbability
+<https://w3id.org/mdivo#hasProbability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasProbability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasProbability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Risk> .
+<https://w3id.org/mdivo#hasProbability> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasProbability> <http://www.w3.org/2000/01/rdf-schema#comment> "Probability level of risk occurrence"@en .
+<https://w3id.org/mdivo#hasProbability> <http://www.w3.org/2000/01/rdf-schema#label> "has probability"@en .
+# 
+# https://w3id.org/mdivo#hasReportDate
+<https://w3id.org/mdivo#hasReportDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasReportDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasReportDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#hasReportDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/mdivo#hasReportDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Date on which the incident was officially reported to EUDAMED."@en .
+<https://w3id.org/mdivo#hasReportDate> <http://www.w3.org/2000/01/rdf-schema#label> "has report date"@en .
+# 
+# https://w3id.org/mdivo#hasSRN
+<https://w3id.org/mdivo#hasSRN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasSRN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasSRN> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#hasSRN> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasSRN> <http://www.w3.org/2000/01/rdf-schema#comment> "Single Registration Number assigned by EUDAMED to each manufacturer"@en .
+<https://w3id.org/mdivo#hasSRN> <http://www.w3.org/2000/01/rdf-schema#label> "has SRN"@en .
+# 
+# https://w3id.org/mdivo#hasSeverity
+<https://w3id.org/mdivo#hasSeverity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasSeverity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#Risk> .
+<https://w3id.org/mdivo#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#comment> "Severity level of the risk"@en .
+<https://w3id.org/mdivo#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#label> "has severity"@en .
+# 
+# https://w3id.org/mdivo#hasStatus
+<https://w3id.org/mdivo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Status of the FSCA"@en .
+<https://w3id.org/mdivo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status"@en .
+# 
+# https://w3id.org/mdivo#hasUDI
+<https://w3id.org/mdivo#hasUDI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#hasUDI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#hasUDI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#hasUDI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/mdivo#hasUDI> <http://www.w3.org/2000/01/rdf-schema#comment> "Unique Device Identifier - Device Identifier"@en .
+<https://w3id.org/mdivo#hasUDI> <http://www.w3.org/2000/01/rdf-schema#label> "has UDI"@en .
+# 
+# https://w3id.org/mdivo#isActive
+<https://w3id.org/mdivo#isActive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#isActive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#isActive> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#isActive> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#isActive> <http://www.w3.org/2000/01/rdf-schema#comment> "Boolean flag used by the reasoner to classify the device as ActiveDevice"@en .
+<https://w3id.org/mdivo#isActive> <http://www.w3.org/2000/01/rdf-schema#label> "is active"@en .
+# 
+# https://w3id.org/mdivo#isIVD
+<https://w3id.org/mdivo#isIVD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#isIVD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#isIVD> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#isIVD> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#isIVD> <http://www.w3.org/2000/01/rdf-schema#comment> "Boolean flag used by the reasoner to infer that the device falls under IVDR"@en .
+<https://w3id.org/mdivo#isIVD> <http://www.w3.org/2000/01/rdf-schema#label> "is IVD"@en .
+# 
+# https://w3id.org/mdivo#isImplantable
+<https://w3id.org/mdivo#isImplantable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#isImplantable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#isImplantable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#isImplantable> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#isImplantable> <http://www.w3.org/2000/01/rdf-schema#comment> "Boolean flag used by the reasoner to classify the device as ImplantableDevice"@en .
+<https://w3id.org/mdivo#isImplantable> <http://www.w3.org/2000/01/rdf-schema#label> "is implantable"@en .
+# 
+# https://w3id.org/mdivo#isReusable
+<https://w3id.org/mdivo#isReusable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/mdivo#isReusable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/mdivo#isReusable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#isReusable> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#isReusable> <http://www.w3.org/2000/01/rdf-schema#comment> "Boolean flag indicating whether the device may be reused after sterilisation"@en .
+<https://w3id.org/mdivo#isReusable> <http://www.w3.org/2000/01/rdf-schema#label> "is reusable"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/mdivo#ActiveDevice
+<https://w3id.org/mdivo#ActiveDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ActiveDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#ActiveDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A medical device whose operation depends on a source of energy other than that generated by the human body or gravity"@en .
+<https://w3id.org/mdivo#ActiveDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Active Device"@en .
+# 
+# https://w3id.org/mdivo#ClassA
+<https://w3id.org/mdivo#ClassA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ClassA> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#RiskClass> .
+<https://w3id.org/mdivo#ClassA> <http://www.w3.org/2000/01/rdf-schema#comment> "Lowest IVDR risk class"@en .
+<https://w3id.org/mdivo#ClassA> <http://www.w3.org/2000/01/rdf-schema#label> "Class A"@en .
+# 
+# https://w3id.org/mdivo#ClassB
+<https://w3id.org/mdivo#ClassB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ClassB> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#RiskClass> .
+<https://w3id.org/mdivo#ClassB> <http://www.w3.org/2000/01/rdf-schema#comment> "Low medium IVDR risk class"@en .
+<https://w3id.org/mdivo#ClassB> <http://www.w3.org/2000/01/rdf-schema#label> "Class B"@en .
+# 
+# https://w3id.org/mdivo#ClassC
+<https://w3id.org/mdivo#ClassC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ClassC> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#RiskClass> .
+<https://w3id.org/mdivo#ClassC> <http://www.w3.org/2000/01/rdf-schema#comment> "Medium high IVDR risk class"@en .
+<https://w3id.org/mdivo#ClassC> <http://www.w3.org/2000/01/rdf-schema#label> "Class C"@en .
+# 
+# https://w3id.org/mdivo#ClassD
+<https://w3id.org/mdivo#ClassD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ClassD> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#RiskClass> .
+<https://w3id.org/mdivo#ClassD> <http://www.w3.org/2000/01/rdf-schema#comment> "Highest IVDR risk class"@en .
+<https://w3id.org/mdivo#ClassD> <http://www.w3.org/2000/01/rdf-schema#label> "Class D"@en .
+# 
+# https://w3id.org/mdivo#ClassI
+<https://w3id.org/mdivo#ClassI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ClassI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#RiskClass> .
+<https://w3id.org/mdivo#ClassI> <http://www.w3.org/2000/01/rdf-schema#comment> "Lowest MDR risk class"@en .
+<https://w3id.org/mdivo#ClassI> <http://www.w3.org/2000/01/rdf-schema#label> "Class I"@en .
+# 
+# https://w3id.org/mdivo#ClassIII
+<https://w3id.org/mdivo#ClassIII> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ClassIII> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#RiskClass> .
+<https://w3id.org/mdivo#ClassIII> <http://www.w3.org/2000/01/rdf-schema#comment> "Highest MDR risk class"@en .
+<https://w3id.org/mdivo#ClassIII> <http://www.w3.org/2000/01/rdf-schema#label> "Class III"@en .
+# 
+# https://w3id.org/mdivo#ClassIIa
+<https://w3id.org/mdivo#ClassIIa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ClassIIa> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#RiskClass> .
+<https://w3id.org/mdivo#ClassIIa> <http://www.w3.org/2000/01/rdf-schema#comment> "Medium low MDR risk class"@en .
+<https://w3id.org/mdivo#ClassIIa> <http://www.w3.org/2000/01/rdf-schema#label> "Class IIa"@en .
+# 
+# https://w3id.org/mdivo#ClassIIb
+<https://w3id.org/mdivo#ClassIIb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ClassIIb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#RiskClass> .
+<https://w3id.org/mdivo#ClassIIb> <http://www.w3.org/2000/01/rdf-schema#comment> "Medium high MDR risk class"@en .
+<https://w3id.org/mdivo#ClassIIb> <http://www.w3.org/2000/01/rdf-schema#label> "Class IIb"@en .
+# 
+# https://w3id.org/mdivo#CompetentAuthority
+<https://w3id.org/mdivo#CompetentAuthority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#CompetentAuthority> <http://www.w3.org/2000/01/rdf-schema#comment> "National authority responsible for supervising medical device manufacturers and the post market surveillance system within an EU member state."@en .
+<https://w3id.org/mdivo#CompetentAuthority> <http://www.w3.org/2000/01/rdf-schema#label> "Competent Authority"@en .
+# 
+# https://w3id.org/mdivo#Country
+<https://w3id.org/mdivo#Country> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#Country> <http://www.w3.org/2000/01/rdf-schema#comment> "A sovereign state, used to model the country of establishment of a manufacturer and the country in which an incident is reported."@en .
+<https://w3id.org/mdivo#Country> <http://www.w3.org/2000/01/rdf-schema#label> "Country"@en .
+# 
+# https://w3id.org/mdivo#CybersecurityRisk
+<https://w3id.org/mdivo#CybersecurityRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#CybersecurityRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#Risk> .
+<https://w3id.org/mdivo#CybersecurityRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk arising from inadequate protection against unauthorized access or modification of a device or its data"@en .
+<https://w3id.org/mdivo#CybersecurityRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Cybersecurity Risk"@en .
+# 
+# https://w3id.org/mdivo#DiagnosticRisk
+<https://w3id.org/mdivo#DiagnosticRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#DiagnosticRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#Risk> .
+<https://w3id.org/mdivo#DiagnosticRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk of erroneous diagnostic results, including false positives or false negatives"@en .
+<https://w3id.org/mdivo#DiagnosticRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Diagnostic Risk"@en .
+# 
+# https://w3id.org/mdivo#FSCA
+<https://w3id.org/mdivo#FSCA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#FSCA> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/mdivo#Incident> .
+_:genid1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mdivo#respondsToIncident> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/mdivo#FSCA> <http://www.w3.org/2000/01/rdf-schema#comment> "Action taken by a manufacturer to reduce the risk of death or serious deterioration in health associated with the use of a device"@en .
+<https://w3id.org/mdivo#FSCA> <http://www.w3.org/2000/01/rdf-schema#label> "Field Safety Corrective Action"@en .
+# 
+# https://w3id.org/mdivo#IVDR
+<https://w3id.org/mdivo#IVDR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#IVDR> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#RegulatoryFramework> .
+<https://w3id.org/mdivo#IVDR> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/mdivo#MDR> .
+<https://w3id.org/mdivo#IVDR> <http://www.w3.org/2000/01/rdf-schema#comment> "Regulation (EU) 2017/746 on in-vitro diagnostic medical devices"@en .
+<https://w3id.org/mdivo#IVDR> <http://www.w3.org/2000/01/rdf-schema#label> "IVDR Framework"@en .
+# 
+# https://w3id.org/mdivo#ImplantableActiveDevice
+<https://w3id.org/mdivo#ImplantableActiveDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ImplantableActiveDevice> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid2 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#hasValue> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mdivo#isImplantable> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#hasValue> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mdivo#isActive> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mdivo#MedicalDevice> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/mdivo#ImplantableActiveDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#ImplantableActiveDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "Active device intended for implantation"@en .
+<https://w3id.org/mdivo#ImplantableActiveDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Implantable Active Device"@en .
+# 
+# https://w3id.org/mdivo#ImplantableDevice
+<https://w3id.org/mdivo#ImplantableDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#ImplantableDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#ImplantableDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A device intended to be totally or partially introduced into the human body and to remain there for at least 30 days"@en .
+<https://w3id.org/mdivo#ImplantableDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Implantable Device"@en .
+# 
+# https://w3id.org/mdivo#InSituCorrection
+<https://w3id.org/mdivo#InSituCorrection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#InSituCorrection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#InSituCorrection> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/mdivo#UserNotice> .
+<https://w3id.org/mdivo#InSituCorrection> <http://www.w3.org/2000/01/rdf-schema#comment> "FSCA performed at the location where the device is installed"@en .
+<https://w3id.org/mdivo#InSituCorrection> <http://www.w3.org/2000/01/rdf-schema#label> "In Situ Correction"@en .
+# 
+# https://w3id.org/mdivo#InVitroDiagnosticDevice
+<https://w3id.org/mdivo#InVitroDiagnosticDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#InVitroDiagnosticDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#InVitroDiagnosticDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "Reagent, calibrator, instrument or system intended for in-vitro examination of specimens from the human body"@en .
+<https://w3id.org/mdivo#InVitroDiagnosticDevice> <http://www.w3.org/2000/01/rdf-schema#label> "In-Vitro Diagnostic Device"@en .
+# 
+# https://w3id.org/mdivo#Incident
+<https://w3id.org/mdivo#Incident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#Incident> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/mdivo#MedicalDevice> .
+_:genid8 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mdivo#affectsDevice> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/mdivo#Incident> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/mdivo#Risk> .
+_:genid9 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mdivo#realizesRisk> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/mdivo#Incident> <http://www.w3.org/2000/01/rdf-schema#comment> "Any malfunction or deterioration in the characteristics or performance of a device that has led, might have led or might lead to harm to a patient or user"@en .
+<https://w3id.org/mdivo#Incident> <http://www.w3.org/2000/01/rdf-schema#label> "Incident"@en .
+# 
+# https://w3id.org/mdivo#InfectionRisk
+<https://w3id.org/mdivo#InfectionRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#InfectionRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#Risk> .
+<https://w3id.org/mdivo#InfectionRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk of infection associated with device use"@en .
+<https://w3id.org/mdivo#InfectionRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Infection Risk"@en .
+# 
+# https://w3id.org/mdivo#InjuryRisk
+<https://w3id.org/mdivo#InjuryRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#InjuryRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#Risk> .
+<https://w3id.org/mdivo#InjuryRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk of physical harm to the patient or user resulting from device use"@en .
+<https://w3id.org/mdivo#InjuryRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Injury Risk"@en .
+# 
+# https://w3id.org/mdivo#MDR
+<https://w3id.org/mdivo#MDR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#MDR> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#RegulatoryFramework> .
+<https://w3id.org/mdivo#MDR> <http://www.w3.org/2000/01/rdf-schema#comment> "Regulation (EU) 2017/745 on medical devices"@en .
+<https://w3id.org/mdivo#MDR> <http://www.w3.org/2000/01/rdf-schema#label> "MDR Framework"@en .
+# 
+# https://w3id.org/mdivo#MalfunctionRisk
+<https://w3id.org/mdivo#MalfunctionRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#MalfunctionRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#Risk> .
+<https://w3id.org/mdivo#MalfunctionRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk of failure of the device to perform as intended"@en .
+<https://w3id.org/mdivo#MalfunctionRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Malfunction Risk"@en .
+# 
+# https://w3id.org/mdivo#Manufacturer
+<https://w3id.org/mdivo#Manufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#comment> "Legal or natural person who manufactures or refurbishes a medical device and markets it under its own name."@en .
+<https://w3id.org/mdivo#Manufacturer> <http://www.w3.org/2000/01/rdf-schema#label> "Manufacturer"@en .
+# 
+# https://w3id.org/mdivo#MedicalDevice
+<https://w3id.org/mdivo#MedicalDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#MedicalDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/mdivo#RegulatoryFramework> .
+_:genid10 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mdivo#fallsUnder> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/mdivo#MedicalDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/mdivo#RiskClass> .
+_:genid11 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mdivo#hasRiskClass> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/mdivo#MedicalDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/mdivo#Manufacturer> .
+_:genid12 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mdivo#isManufacturedBy> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/mdivo#MedicalDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mdivo#hasUDI> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/mdivo#MedicalDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A device, instrument, apparatus, software, implant or in-vitro reagent intended by the manufacturer for medical use."@en .
+<https://w3id.org/mdivo#MedicalDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Medical Device"@en .
+# 
+# https://w3id.org/mdivo#NearMissIncident
+<https://w3id.org/mdivo#NearMissIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#NearMissIncident> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#NearMissIncident> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/mdivo#SeriousIncident> .
+<https://w3id.org/mdivo#NearMissIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "Incident detected before causing harm to the patient or user; tracked for trend analysis under PMS obligations"@en .
+<https://w3id.org/mdivo#NearMissIncident> <http://www.w3.org/2000/01/rdf-schema#label> "Near Miss Incident"@en .
+# 
+# https://w3id.org/mdivo#Recall
+<https://w3id.org/mdivo#Recall> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#Recall> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#Recall> <http://www.w3.org/2000/01/rdf-schema#comment> "FSCA consisting in the removal of affected devices from the market and from end users"@en .
+<https://w3id.org/mdivo#Recall> <http://www.w3.org/2000/01/rdf-schema#label> "Recall"@en .
+# 
+# https://w3id.org/mdivo#RegulatoryFramework
+<https://w3id.org/mdivo#RegulatoryFramework> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#RegulatoryFramework> <http://www.w3.org/2000/01/rdf-schema#comment> "The European regulation that governs the marketing of a given device."@en .
+<https://w3id.org/mdivo#RegulatoryFramework> <http://www.w3.org/2000/01/rdf-schema#label> "Regulatory Framework"@en .
+# 
+# https://w3id.org/mdivo#Risk
+<https://w3id.org/mdivo#Risk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#Risk> <http://www.w3.org/2000/01/rdf-schema#comment> "An identified hazard that may be caused by or associated with a medical device"@en .
+<https://w3id.org/mdivo#Risk> <http://www.w3.org/2000/01/rdf-schema#label> "Risk"@en .
+# 
+# https://w3id.org/mdivo#RiskClass
+<https://w3id.org/mdivo#RiskClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#RiskClass> <http://www.w3.org/2000/01/rdf-schema#label> "Risk Class"@en .
+<https://w3id.org/mdivo#RiskClass> <http://www.w3.org/2000/01/rdf-schema#label> "Risk classification scheme"@en .
+# 
+# https://w3id.org/mdivo#SafetyAlert
+<https://w3id.org/mdivo#SafetyAlert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#SafetyAlert> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#SafetyAlert> <http://www.w3.org/2000/01/rdf-schema#comment> "Field Safety Notice issued to inform users of a hazard without removing the device from the market."@en .
+<https://w3id.org/mdivo#SafetyAlert> <http://www.w3.org/2000/01/rdf-schema#label> "Safety Alert"@en .
+# 
+# https://w3id.org/mdivo#SelfTestDevice
+<https://w3id.org/mdivo#SelfTestDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#SelfTestDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#InVitroDiagnosticDevice> .
+<https://w3id.org/mdivo#SelfTestDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "An IVD device intended by the manufacturer to be used by lay persons"@en .
+<https://w3id.org/mdivo#SelfTestDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Self Test Device"@en .
+# 
+# https://w3id.org/mdivo#SeriousIncident
+<https://w3id.org/mdivo#SeriousIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#SeriousIncident> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#Incident> .
+<https://w3id.org/mdivo#SeriousIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "Incident that directly or indirectly led, might have led or might lead to death or serious deterioration in health"@en .
+<https://w3id.org/mdivo#SeriousIncident> <http://www.w3.org/2000/01/rdf-schema#label> "Serious Incident"@en .
+# 
+# https://w3id.org/mdivo#SingleUseDevice
+<https://w3id.org/mdivo#SingleUseDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#SingleUseDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#MedicalDevice> .
+<https://w3id.org/mdivo#SingleUseDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A device intended to be used on a single individual during a single procedure"@en .
+<https://w3id.org/mdivo#SingleUseDevice> <http://www.w3.org/2000/01/rdf-schema#label> "Single Use Device"@en .
+# 
+# https://w3id.org/mdivo#SoftwareRisk
+<https://w3id.org/mdivo#SoftwareRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#SoftwareRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#Risk> .
+<https://w3id.org/mdivo#SoftwareRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk arising from software defects, including embedded firmware"@en .
+<https://w3id.org/mdivo#SoftwareRisk> <http://www.w3.org/2000/01/rdf-schema#label> "Software Risk"@en .
+# 
+# https://w3id.org/mdivo#UserNotice
+<https://w3id.org/mdivo#UserNotice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mdivo#UserNotice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mdivo#FSCA> .
+<https://w3id.org/mdivo#UserNotice> <http://www.w3.org/2000/01/rdf-schema#comment> "Communication to end users updating instructions for use, contraindications or training requirements."@en .
+<https://w3id.org/mdivo#UserNotice> <http://www.w3.org/2000/01/rdf-schema#label> "User Notice"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices
+<http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://dbpedia.org/resource/Federal_Institute_for_Drugs_and_Medical_Devices> <http://www.w3.org/2002/07/owl#sameAs> <https://w3id.org/mdivo#Authority_BfArM> .
+# 
+# https://w3id.org/mdivo#Authority_BfArM
+# 
+# http://dbpedia.org/resource/Germany
+<http://dbpedia.org/resource/Germany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://dbpedia.org/resource/Germany> <http://www.w3.org/2002/07/owl#sameAs> <https://w3id.org/mdivo#Country_Germany> .
+# 
+# https://w3id.org/mdivo#Country_Germany
+# 
+# http://dbpedia.org/resource/Health_Products_Regulatory_Authority
+<http://dbpedia.org/resource/Health_Products_Regulatory_Authority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://dbpedia.org/resource/Health_Products_Regulatory_Authority> <http://www.w3.org/2002/07/owl#sameAs> <https://w3id.org/mdivo#Authority_HPRA> .
+# 
+# https://w3id.org/mdivo#Authority_HPRA
+# 
+# http://dbpedia.org/resource/Ireland
+<http://dbpedia.org/resource/Ireland> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://dbpedia.org/resource/Ireland> <http://www.w3.org/2002/07/owl#sameAs> <https://w3id.org/mdivo#Country_Ireland> .
+# 
+# https://w3id.org/mdivo#Country_Ireland
+# 
+# http://dbpedia.org/resource/Medtronic
+<http://dbpedia.org/resource/Medtronic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://dbpedia.org/resource/Medtronic> <http://www.w3.org/2002/07/owl#sameAs> <https://w3id.org/mdivo#MAN-001> .
+# 
+# https://w3id.org/mdivo#MAN-001
+# 
+# http://dbpedia.org/resource/Roche_Diagnostics
+<http://dbpedia.org/resource/Roche_Diagnostics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://dbpedia.org/resource/Roche_Diagnostics> <http://www.w3.org/2002/07/owl#sameAs> <https://w3id.org/mdivo#MAN-005> .
+# 
+# https://w3id.org/mdivo#MAN-005
+# 
+# http://www.wikidata.org/entity/Q183
+<http://www.wikidata.org/entity/Q183> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.wikidata.org/entity/Q183> <http://www.w3.org/2002/07/owl#sameAs> <https://w3id.org/mdivo#Country_Germany> .
+# 
+# https://w3id.org/mdivo#Country_Germany
+# 
+# http://www.wikidata.org/entity/Q27
+<http://www.wikidata.org/entity/Q27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.wikidata.org/entity/Q27> <http://www.w3.org/2002/07/owl#sameAs> <https://w3id.org/mdivo#Country_Ireland> .
+# 
+# https://w3id.org/mdivo#Country_Ireland
+# 
+# http://www.wikidata.org/entity/Q573153
+<http://www.wikidata.org/entity/Q573153> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.wikidata.org/entity/Q573153> <http://www.w3.org/2002/07/owl#sameAs> <https://w3id.org/mdivo#Authority_BfArM> .
+# 
+# https://w3id.org/mdivo#Authority_BfArM
+# 
+# http://www.wikidata.org/entity/Q679041
+<http://www.wikidata.org/entity/Q679041> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.wikidata.org/entity/Q679041> <http://www.w3.org/2002/07/owl#sameAs> <https://w3id.org/mdivo#MAN-001> .
+# 
+# https://w3id.org/mdivo#MAN-001
+# 
+# https://w3id.org/mdivo#Authority_BfArM
+<https://w3id.org/mdivo#Authority_BfArM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#Authority_BfArM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#CompetentAuthority> .
+<https://w3id.org/mdivo#Authority_BfArM> <http://www.w3.org/2000/01/rdf-schema#comment> "Federal Institute for Drugs and Medical Devices - Germany"@en .
+<https://w3id.org/mdivo#Authority_BfArM> <http://www.w3.org/2000/01/rdf-schema#label> "BfArM"@en .
+# 
+# https://w3id.org/mdivo#Authority_HPRA
+<https://w3id.org/mdivo#Authority_HPRA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#Authority_HPRA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#CompetentAuthority> .
+<https://w3id.org/mdivo#Authority_HPRA> <http://www.w3.org/2000/01/rdf-schema#comment> "Health Products Regulatory Authority - Ireland"@en .
+<https://w3id.org/mdivo#Authority_HPRA> <http://www.w3.org/2000/01/rdf-schema#label> "HPRA"@en .
+# 
+# https://w3id.org/mdivo#Country_Germany
+<https://w3id.org/mdivo#Country_Germany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#Country_Germany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#Country> .
+<https://w3id.org/mdivo#Country_Germany> <http://www.w3.org/2000/01/rdf-schema#comment> "Federal Republic of Germany"@en .
+<https://w3id.org/mdivo#Country_Germany> <http://www.w3.org/2000/01/rdf-schema#label> "Germany"@en .
+# 
+# https://w3id.org/mdivo#Country_Ireland
+<https://w3id.org/mdivo#Country_Ireland> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#Country_Ireland> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#Country> .
+<https://w3id.org/mdivo#Country_Ireland> <http://www.w3.org/2000/01/rdf-schema#comment> "Republic of Ireland"@en .
+<https://w3id.org/mdivo#Country_Ireland> <http://www.w3.org/2000/01/rdf-schema#label> "Ireland"@en .
+# 
+# https://w3id.org/mdivo#DEV-001
+<https://w3id.org/mdivo#DEV-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#DEV-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#ImplantableActiveDevice> .
+<https://w3id.org/mdivo#DEV-001> <https://w3id.org/mdivo#fallsUnder> <https://w3id.org/mdivo#_MDR_inst> .
+<https://w3id.org/mdivo#DEV-001> <https://w3id.org/mdivo#hasRiskClass> <https://w3id.org/mdivo#_ClassIII_inst> .
+<https://w3id.org/mdivo#DEV-001> <https://w3id.org/mdivo#isManufacturedBy> <https://w3id.org/mdivo#MAN-001> .
+<https://w3id.org/mdivo#DEV-001> <https://w3id.org/mdivo#hasDeviceName> "HeartMate 3 LVAD" .
+<https://w3id.org/mdivo#DEV-001> <https://w3id.org/mdivo#hasIntendedPurpose> "Long term mechanical circulatory support for patients with advanced refractory heart failure." .
+<https://w3id.org/mdivo#DEV-001> <https://w3id.org/mdivo#hasUDI> "(01)00380740009095" .
+<https://w3id.org/mdivo#DEV-001> <https://w3id.org/mdivo#isActive> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#DEV-001> <https://w3id.org/mdivo#isIVD> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#DEV-001> <https://w3id.org/mdivo#isImplantable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#DEV-001> <https://w3id.org/mdivo#isReusable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#DEV-001> <http://www.w3.org/2000/01/rdf-schema#comment> "Centrifugal flow left ventricular assist device for advanced heart failure."@en .
+<https://w3id.org/mdivo#DEV-001> <http://www.w3.org/2000/01/rdf-schema#label> "HeartMate 3 LVAD"@en .
+# 
+# https://w3id.org/mdivo#DEV-017
+<https://w3id.org/mdivo#DEV-017> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#DEV-017> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#InVitroDiagnosticDevice> .
+<https://w3id.org/mdivo#DEV-017> <https://w3id.org/mdivo#fallsUnder> <https://w3id.org/mdivo#_IVDR_inst> .
+<https://w3id.org/mdivo#DEV-017> <https://w3id.org/mdivo#hasRiskClass> <https://w3id.org/mdivo#_ClassC_inst> .
+<https://w3id.org/mdivo#DEV-017> <https://w3id.org/mdivo#isManufacturedBy> <https://w3id.org/mdivo#MAN-005> .
+<https://w3id.org/mdivo#DEV-017> <https://w3id.org/mdivo#hasDeviceName> "cobas SARS-CoV-2 RT-PCR Test" .
+<https://w3id.org/mdivo#DEV-017> <https://w3id.org/mdivo#hasIntendedPurpose> "Qualitative detection of SARS-CoV-2 RNA from nasopharyngeal and oropharyngeal swabs." .
+<https://w3id.org/mdivo#DEV-017> <https://w3id.org/mdivo#hasUDI> "(01)07613336202345" .
+<https://w3id.org/mdivo#DEV-017> <https://w3id.org/mdivo#isActive> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#DEV-017> <https://w3id.org/mdivo#isIVD> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#DEV-017> <https://w3id.org/mdivo#isImplantable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#DEV-017> <https://w3id.org/mdivo#isReusable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/mdivo#DEV-017> <http://www.w3.org/2000/01/rdf-schema#comment> "Real-time PCR test for the qualitative detection of SARS-CoV-2 RNA"@en .
+<https://w3id.org/mdivo#DEV-017> <http://www.w3.org/2000/01/rdf-schema#label> "cobas SARS-CoV-2 RT-PCR Test"@en .
+# 
+# https://w3id.org/mdivo#FSCA-001
+<https://w3id.org/mdivo#FSCA-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#FSCA-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#SafetyAlert> .
+<https://w3id.org/mdivo#FSCA-001> <https://w3id.org/mdivo#respondsToIncident> <https://w3id.org/mdivo#INC-001> .
+<https://w3id.org/mdivo#FSCA-001> <https://w3id.org/mdivo#hasActionDate> "2024-01-22"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/mdivo#FSCA-001> <https://w3id.org/mdivo#hasDevicesAffectedCount> "850" .
+<https://w3id.org/mdivo#FSCA-001> <https://w3id.org/mdivo#hasEudamedFSCARef> "EU-FSCA-2024-000001" .
+<https://w3id.org/mdivo#FSCA-001> <https://w3id.org/mdivo#hasStatus> "Open" .
+<https://w3id.org/mdivo#FSCA-001> <http://www.w3.org/2000/01/rdf-schema#comment> "Field Safety Notice issued by Medtronic warning clinicians of the increased risk of outflow graft obstruction"@en .
+<https://w3id.org/mdivo#FSCA-001> <http://www.w3.org/2000/01/rdf-schema#label> "Safety alert for HeartMate 3 outflow graft (FSCA-001)"@en .
+# 
+# https://w3id.org/mdivo#FSCA-012
+<https://w3id.org/mdivo#FSCA-012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#FSCA-012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#UserNotice> .
+<https://w3id.org/mdivo#FSCA-012> <https://w3id.org/mdivo#respondsToIncident> <https://w3id.org/mdivo#INC-012> .
+<https://w3id.org/mdivo#FSCA-012> <https://w3id.org/mdivo#hasActionDate> "2024-02-15"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/mdivo#FSCA-012> <https://w3id.org/mdivo#hasClosureDate> "2024-04-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/mdivo#FSCA-012> <https://w3id.org/mdivo#hasDevicesAffectedCount> "12500" .
+<https://w3id.org/mdivo#FSCA-012> <https://w3id.org/mdivo#hasEudamedFSCARef> "EU-FSCA-2024-000012" .
+<https://w3id.org/mdivo#FSCA-012> <https://w3id.org/mdivo#hasStatus> "Closed" .
+<https://w3id.org/mdivo#FSCA-012> <http://www.w3.org/2000/01/rdf-schema#comment> "User notice issued by Roche advising laboratories to combine results with epidemiological data while a primer update is validated."@en .
+<https://w3id.org/mdivo#FSCA-012> <http://www.w3.org/2000/01/rdf-schema#label> "User notice for cobas SARS-CoV-2 (FSCA-012)"@en .
+# 
+# https://w3id.org/mdivo#INC-001
+<https://w3id.org/mdivo#INC-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#INC-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#SeriousIncident> .
+<https://w3id.org/mdivo#INC-001> <https://w3id.org/mdivo#affectsDevice> <https://w3id.org/mdivo#DEV-001> .
+<https://w3id.org/mdivo#INC-001> <https://w3id.org/mdivo#hasReportingCountry> <https://w3id.org/mdivo#Country_Ireland> .
+<https://w3id.org/mdivo#INC-001> <https://w3id.org/mdivo#hasReportingEntity> <https://w3id.org/mdivo#MAN-001> .
+<https://w3id.org/mdivo#INC-001> <https://w3id.org/mdivo#realizesRisk> <https://w3id.org/mdivo#RSK-003> .
+<https://w3id.org/mdivo#INC-001> <https://w3id.org/mdivo#hasEudamedIncidentRef> "EU-INC-2024-000001" .
+<https://w3id.org/mdivo#INC-001> <https://w3id.org/mdivo#hasEventDate> "2024-01-15"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/mdivo#INC-001> <https://w3id.org/mdivo#hasOutcome> "Surgical revision performed" .
+<https://w3id.org/mdivo#INC-001> <https://w3id.org/mdivo#hasPatientAge> "64"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/mdivo#INC-001> <https://w3id.org/mdivo#hasReportDate> "2024-01-15"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/mdivo#INC-001> <http://www.w3.org/2000/01/rdf-schema#comment> "Patient experienced thrombotic obstruction of the outflow graft requiring urgent surgical revision"@en .
+<https://w3id.org/mdivo#INC-001> <http://www.w3.org/2000/01/rdf-schema#label> "Outflow-graft obstruction in HeartMate 3 unit"@en .
+# 
+# https://w3id.org/mdivo#INC-012
+<https://w3id.org/mdivo#INC-012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#INC-012> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#SeriousIncident> .
+<https://w3id.org/mdivo#INC-012> <https://w3id.org/mdivo#affectsDevice> <https://w3id.org/mdivo#DEV-017> .
+<https://w3id.org/mdivo#INC-012> <https://w3id.org/mdivo#hasReportingCountry> <https://w3id.org/mdivo#Country_Germany> .
+<https://w3id.org/mdivo#INC-012> <https://w3id.org/mdivo#hasReportingEntity> <https://w3id.org/mdivo#MAN-005> .
+<https://w3id.org/mdivo#INC-012> <https://w3id.org/mdivo#realizesRisk> <https://w3id.org/mdivo#RSK-008> .
+<https://w3id.org/mdivo#INC-012> <https://w3id.org/mdivo#hasEudamedIncidentRef> "EU-INC-2024-000012" .
+<https://w3id.org/mdivo#INC-012> <https://w3id.org/mdivo#hasEventDate> "2024-02-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/mdivo#INC-012> <https://w3id.org/mdivo#hasOutcome> "Diagnostic delay, revised primer set under development." .
+<https://w3id.org/mdivo#INC-012> <https://w3id.org/mdivo#hasReportDate> "2024-02-08"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/mdivo#INC-012> <http://www.w3.org/2000/01/rdf-schema#comment> "Cluster of false negative results detected in samples positive for the BA.2.86 Omicron subvariant"@en .
+<https://w3id.org/mdivo#INC-012> <http://www.w3.org/2000/01/rdf-schema#label> "False negatives in cobas SARS-CoV-2 test for Omicron BA.2.86"@en .
+# 
+# https://w3id.org/mdivo#MAN-001
+<https://w3id.org/mdivo#MAN-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#MAN-001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#MAN-001> <https://w3id.org/mdivo#hasEstablishmentCountry> <https://w3id.org/mdivo#Country_Ireland> .
+<https://w3id.org/mdivo#MAN-001> <https://w3id.org/mdivo#isSupervisedBy> <https://w3id.org/mdivo#Authority_HPRA> .
+<https://w3id.org/mdivo#MAN-001> <https://w3id.org/mdivo#hasAuthorizationNumber> "IE/2023/000123" .
+<https://w3id.org/mdivo#MAN-001> <https://w3id.org/mdivo#hasContactEmail> "regulatory.affairs@medtronic.com" .
+<https://w3id.org/mdivo#MAN-001> <https://w3id.org/mdivo#hasOrgName> "Medtronic plc" .
+<https://w3id.org/mdivo#MAN-001> <https://w3id.org/mdivo#hasSRN> "IE-MF-000001234" .
+<https://w3id.org/mdivo#MAN-001> <http://www.w3.org/2000/01/rdf-schema#comment> "Medical device multinational headquartered in Dublin, Ireland. Manufacturer of the HeartMate 3 LVAD."@en .
+<https://w3id.org/mdivo#MAN-001> <http://www.w3.org/2000/01/rdf-schema#label> "Medtronic plc"@en .
+# 
+# https://w3id.org/mdivo#MAN-005
+<https://w3id.org/mdivo#MAN-005> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#MAN-005> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#Manufacturer> .
+<https://w3id.org/mdivo#MAN-005> <https://w3id.org/mdivo#hasEstablishmentCountry> <https://w3id.org/mdivo#Country_Germany> .
+<https://w3id.org/mdivo#MAN-005> <https://w3id.org/mdivo#isSupervisedBy> <https://w3id.org/mdivo#Authority_BfArM> .
+<https://w3id.org/mdivo#MAN-005> <https://w3id.org/mdivo#hasAuthorizationNumber> "DE/2023/000567" .
+<https://w3id.org/mdivo#MAN-005> <https://w3id.org/mdivo#hasContactEmail> "diagnostics.regulatory@roche.com" .
+<https://w3id.org/mdivo#MAN-005> <https://w3id.org/mdivo#hasOrgName> "Roche Diagnostics GmbH" .
+<https://w3id.org/mdivo#MAN-005> <https://w3id.org/mdivo#hasSRN> "DE-MF-000005678" .
+<https://w3id.org/mdivo#MAN-005> <http://www.w3.org/2000/01/rdf-schema#comment> "German subsidiary of F. Hoffmann La Roche AG specialised in in-vitro diagnostics"@en .
+<https://w3id.org/mdivo#MAN-005> <http://www.w3.org/2000/01/rdf-schema#label> "Roche Diagnostics GmbH"@en .
+# 
+# https://w3id.org/mdivo#RSK-003
+<https://w3id.org/mdivo#RSK-003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#RSK-003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#InjuryRisk> .
+<https://w3id.org/mdivo#RSK-003> <https://w3id.org/mdivo#hasIMDRFCode> "A0201" .
+<https://w3id.org/mdivo#RSK-003> <https://w3id.org/mdivo#hasProbability> "Medium" .
+<https://w3id.org/mdivo#RSK-003> <https://w3id.org/mdivo#hasSeverity> "Critical" .
+<https://w3id.org/mdivo#RSK-003> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk of stroke or pulmonary embolism caused by thrombus formation in the outflow graft of a ventricular assist device."@en .
+<https://w3id.org/mdivo#RSK-003> <http://www.w3.org/2000/01/rdf-schema#label> "Thrombotic event from LVAD outflow graft"@en .
+# 
+# https://w3id.org/mdivo#RSK-008
+<https://w3id.org/mdivo#RSK-008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#RSK-008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#DiagnosticRisk> .
+<https://w3id.org/mdivo#RSK-008> <https://w3id.org/mdivo#hasIMDRFCode> "B0102" .
+<https://w3id.org/mdivo#RSK-008> <https://w3id.org/mdivo#hasProbability> "Medium" .
+<https://w3id.org/mdivo#RSK-008> <https://w3id.org/mdivo#hasSeverity> "Serious" .
+<https://w3id.org/mdivo#RSK-008> <http://www.w3.org/2000/01/rdf-schema#comment> "Risk that a PCR-based diagnostic test fails to detect a true positive sample"@en .
+<https://w3id.org/mdivo#RSK-008> <http://www.w3.org/2000/01/rdf-schema#label> "False negative result in PCR test"@en .
+# 
+# https://w3id.org/mdivo#_ClassC_inst
+<https://w3id.org/mdivo#_ClassC_inst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#_ClassC_inst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#ClassC> .
+<https://w3id.org/mdivo#_ClassC_inst> <http://www.w3.org/2000/01/rdf-schema#comment> "Single instance representing the IVDR risk class C"@en .
+<https://w3id.org/mdivo#_ClassC_inst> <http://www.w3.org/2000/01/rdf-schema#label> "Class C (instance)"@en .
+# 
+# https://w3id.org/mdivo#_ClassIII_inst
+<https://w3id.org/mdivo#_ClassIII_inst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#_ClassIII_inst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#ClassIII> .
+<https://w3id.org/mdivo#_ClassIII_inst> <http://www.w3.org/2000/01/rdf-schema#comment> "Single instance representing the MDR risk class III"@en .
+<https://w3id.org/mdivo#_ClassIII_inst> <http://www.w3.org/2000/01/rdf-schema#label> "Class III (instance)"@en .
+# 
+# https://w3id.org/mdivo#_IVDR_inst
+<https://w3id.org/mdivo#_IVDR_inst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#_IVDR_inst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#IVDR> .
+<https://w3id.org/mdivo#_IVDR_inst> <http://www.w3.org/2000/01/rdf-schema#comment> "Single instance representing the IVDR regulatory framework"@en .
+<https://w3id.org/mdivo#_IVDR_inst> <http://www.w3.org/2000/01/rdf-schema#label> "IVDR (instance)"@en .
+# 
+# https://w3id.org/mdivo#_MDR_inst
+<https://w3id.org/mdivo#_MDR_inst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/mdivo#_MDR_inst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/mdivo#MDR> .
+<https://w3id.org/mdivo#_MDR_inst> <http://www.w3.org/2000/01/rdf-schema#comment> "Single instance representing the MDR regulatory framework"@en .
+<https://w3id.org/mdivo#_MDR_inst> <http://www.w3.org/2000/01/rdf-schema#label> "MDR (instance)"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid14 <http://www.w3.org/2002/07/owl#members> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mdivo#UserNotice> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mdivo#SafetyAlert> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mdivo#Recall> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mdivo#InSituCorrection> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid19 <http://www.w3.org/2002/07/owl#members> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mdivo#UserNotice> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mdivo#Recall> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mdivo#InSituCorrection> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Rules
+# #
+# #################################################################
+# 
+# 
+<https://w3id.org/mdivo#d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+<https://w3id.org/mdivo#i> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+<https://w3id.org/mdivo#m> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Variable> .
+_:genid23 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid23 <http://www.w3.org/2000/01/rdf-schema#comment> "If a medical device has isIVD=true, the reasoner infers that it falls under the IVDR regulatory framework." .
+_:genid23 <http://www.w3.org/2000/01/rdf-schema#label> "Rule_IVDFallsUnderIVDR" .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid23 <http://www.w3.org/2003/11/swrl#body> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid25 .
+_:genid25 <http://www.w3.org/2003/11/swrl#argument2> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid25 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#d> .
+_:genid25 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/mdivo#isIVD> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid27 .
+_:genid27 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#d> .
+_:genid27 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/mdivo#MedicalDevice> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid23 <http://www.w3.org/2003/11/swrl#head> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid29 .
+_:genid29 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/mdivo#_IVDR_inst> .
+_:genid29 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#d> .
+_:genid29 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/mdivo#fallsUnder> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid30 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid30 <http://www.w3.org/2000/01/rdf-schema#comment> "If a medical device has both isImplantable=true and isActive=true, it is classified as an ImplantableActiveDevice." .
+_:genid30 <http://www.w3.org/2000/01/rdf-schema#label> "Rule_ImplantableActive" .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid30 <http://www.w3.org/2003/11/swrl#body> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid32 .
+_:genid32 <http://www.w3.org/2003/11/swrl#argument2> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid32 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#d> .
+_:genid32 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/mdivo#isActive> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid34 .
+_:genid34 <http://www.w3.org/2003/11/swrl#argument2> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid34 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#d> .
+_:genid34 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/mdivo#isImplantable> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid36 .
+_:genid36 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#d> .
+_:genid36 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/mdivo#MedicalDevice> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid30 <http://www.w3.org/2003/11/swrl#head> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid38 .
+_:genid38 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#d> .
+_:genid38 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/mdivo#ImplantableActiveDevice> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid39 <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+_:genid39 <http://www.w3.org/2000/01/rdf-schema#comment> "If an incident affects a device manufactured by M, then M is the reporting entity of the incident." .
+_:genid39 <http://www.w3.org/2000/01/rdf-schema#label> "Rule_ManufacturerIsReportingEntity" .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#Imp> .
+_:genid39 <http://www.w3.org/2003/11/swrl#body> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid41 .
+_:genid41 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/mdivo#m> .
+_:genid41 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#d> .
+_:genid41 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/mdivo#isManufacturedBy> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid43 .
+_:genid43 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/mdivo#d> .
+_:genid43 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#i> .
+_:genid43 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/mdivo#affectsDevice> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid45 .
+_:genid45 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#i> .
+_:genid45 <http://www.w3.org/2003/11/swrl#classPredicate> <https://w3id.org/mdivo#Incident> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#ClassAtom> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+_:genid39 <http://www.w3.org/2003/11/swrl#head> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid47 .
+_:genid47 <http://www.w3.org/2003/11/swrl#argument2> <https://w3id.org/mdivo#m> .
+_:genid47 <http://www.w3.org/2003/11/swrl#argument1> <https://w3id.org/mdivo#i> .
+_:genid47 <http://www.w3.org/2003/11/swrl#propertyPredicate> <https://w3id.org/mdivo#hasReportingEntity> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2003/11/swrl#AtomList> .
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
